@@ -1,0 +1,745 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Psiquimed - Guided Calm for Mental Wellness</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'on-background': '#1a1c1d',
+              'inverse-primary': '#ccbeff',
+              'on-tertiary': '#ffffff',
+              'on-secondary-fixed-variant': '#633372',
+              'on-error-container': '#93000a',
+              'surface-tint': '#6449c0',
+              'secondary-fixed-dim': '#edb2fb',
+              outline: '#797584',
+              'on-surface-variant': '#484553',
+              'on-secondary-container': '#724181',
+              error: '#ba1a1a',
+              'tertiary-container': '#4c245a',
+              'surface-dim': '#d9dadc',
+              'on-surface': '#1a1c1d',
+              'surface-container': '#edeef0',
+              'on-secondary-fixed': '#330143',
+              'inverse-surface': '#2f3132',
+              'secondary-fixed': '#fad7ff',
+              'inverse-on-surface': '#f0f0f2',
+              'primary-container': '#391494',
+              background: '#f9f9fb',
+              'on-primary-fixed': '#1e0060',
+              'on-error': '#ffffff',
+              'surface-container-high': '#e8e8ea',
+              'on-primary-fixed-variant': '#4c2ea6',
+              'primary-fixed': '#e7deff',
+              'tertiary-fixed-dim': '#e8b5f5',
+              'primary-fixed-dim': '#ccbeff',
+              'tertiary-fixed': '#fad7ff',
+              'on-primary-container': '#a48cff',
+              'on-tertiary-fixed': '#30073e',
+              tertiary: '#340c43',
+              'surface-bright': '#f9f9fb',
+              'on-tertiary-container': '#bd8cca',
+              surface: '#f9f9fb',
+              'surface-container-lowest': '#ffffff',
+              'secondary-container': '#f0b4fe',
+              'surface-container-highest': '#e2e2e4',
+              'on-tertiary-fixed-variant': '#60366d',
+              'surface-container-low': '#f3f3f5',
+              'error-container': '#ffdad6',
+              'outline-variant': '#cac4d5',
+              primary: '#23006b',
+              'on-primary': '#ffffff',
+              'on-secondary': '#ffffff',
+              'surface-variant': '#e2e2e4',
+              secondary: '#7d4b8c',
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px',
+            },
+            spacing: {
+              md: '24px',
+              lg: '48px',
+              xl: '80px',
+              base: '8px',
+              gutter: '24px',
+              'container-max': '1200px',
+              sm: '12px',
+              xs: '4px',
+            },
+            fontFamily: {
+              'body-lg': ['Manrope'],
+              'label-caps': ['Inter'],
+              'headline-lg': ['Manrope'],
+              'headline-md': ['Manrope'],
+              'body-md': ['Manrope'],
+              'headline-xl': ['Manrope'],
+            },
+            fontSize: {
+              'body-lg': ['18px', { lineHeight: '1.6', fontWeight: '400' }],
+              'label-caps': ['12px', { lineHeight: '1.0', letterSpacing: '0.05em', fontWeight: '600' }],
+              'headline-lg': ['32px', { lineHeight: '1.3', fontWeight: '600' }],
+              'headline-md': ['24px', { lineHeight: '1.4', fontWeight: '600' }],
+              'body-md': ['16px', { lineHeight: '1.6', fontWeight: '400' }],
+              'headline-xl': ['48px', { lineHeight: '1.2', letterSpacing: '-0.02em', fontWeight: '700' }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .carousel-transition-enter {
+        opacity: 0;
+        transform: scale(1.05);
+      }
+      .carousel-transition-enter-active {
+        opacity: 1;
+        transform: scale(1);
+        transition: all 1s ease-out;
+      }
+      .carousel-transition-exit {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .carousel-transition-exit-active {
+        opacity: 0;
+        transform: scale(1.05);
+        transition: all 1s ease-in;
+      }
+
+      .text-transition-enter {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .text-transition-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.8s ease-out 0.2s;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md w-full top-0 z-50 sticky border-b border-slate-100 dark:border-slate-800 shadow-[0_2px_15px_-3px_rgba(57,20,148,0.07)] font-manrope antialiased text-[#391494] dark:text-purple-400"
+    >
+      <div class="flex justify-between items-center h-20 px-8 max-w-[1200px] mx-auto">
+        <div class="text-2xl font-bold tracking-tight text-[#391494] dark:text-purple-300" style="">Psiquimed</div>
+        <div class="hidden md:flex items-center gap-sm">
+          <a
+            class="text-[#391494] dark:text-purple-300 font-bold border-b-2 border-[#391494] pb-1 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all"
+            href="#"
+            style=""
+          >
+            Home
+          </a>
+          <a
+            class="text-slate-600 dark:text-slate-400 hover:text-[#391494] hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg px-3 py-2 transition-all"
+            href="#"
+            style=""
+          >
+            Prefesionales
+          </a>
+          <a
+            class="text-slate-600 dark:text-slate-400 hover:text-[#391494] hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg px-3 py-2 transition-all"
+            href="#"
+            style=""
+          >
+            Servicios
+          </a>
+          <a
+            class="text-slate-600 dark:text-slate-400 hover:text-[#391494] hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg px-3 py-2 transition-all"
+            href="#"
+            style=""
+          >
+            Educación
+          </a>
+          <a
+            class="text-slate-600 dark:text-slate-400 hover:text-[#391494] hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg px-3 py-2 transition-all"
+            href="#"
+            style=""
+          >
+            Contacto
+          </a>
+        </div>
+        <div class="flex items-center gap-md">
+          <button
+            class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-caps text-label-caps hover:bg-surface-tint active:scale-95 duration-150 ease-in-out"
+            style=""
+          >
+            Agenda una cita
+          </button>
+          <button
+            aria-label="chat"
+            class="text-[#391494] dark:text-purple-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg p-2 active:scale-95 duration-150 ease-in-out"
+            style=""
+          >
+            <span class="material-symbols-outlined" style="">chat</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <!-- Hero Section Auto-playing Carousel -->
+      <section
+        class="relative w-full min-h-[819px] flex items-center bg-surface-container overflow-hidden"
+        x-data="{
+        activeSlide: 0,
+        slides: [
+            {
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA5J2BJMRIsDmu6k_Hzgr8551zKl2V90j4G1rKpQeiMhs6uY2JWLUgya1fIw00bPOw_wPxjqTzoJq2Qvqc_CBtZdoW1wmH4gKTOMpj1T8l6iXOPWYiVarJMh7D66299xtwpU-s-AIZRP9qZ2ajcW9fsGk2n-Ze1s0f9g1aMARgGIj-h536qU_0WRYO_V_EELi_hyrFQfQUvrciCkkrd6HlIEa_8gXt6O8l_wZU6MViFeaIJLGqdn3OlQKQctwc1cMdbGMiIQup5hUY',
+                title: 'Tu bienestar es nuestra prioridad',
+                text: 'Experiencing guided calm through professional psychiatric care and empathetic support tailored to your mental wellness journey.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80',
+                title: 'Encuentra tu paz interior',
+                text: 'Entornos serenos y profesionales capacitados para guiarte hacia una mejor salud mental y equilibrio emocional.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80',
+                title: 'Apoyo profesional compasivo',
+                text: 'Terapias basadas en evidencia diseñadas específicamente para tus necesidades individuales en un espacio seguro.'
+            }
+        ],
+        init() {
+            setInterval(() =&gt; {
+                this.activeSlide = this.activeSlide === this.slides.length - 1 ? 0 : this.activeSlide + 1;
+            }, 6000);
+        }
+    }"
+      >
+        <!-- Background Images -->
+        <template :key="index" x-for="(slide, index) in slides">
+          <div
+            :style="`background-image: url('${slide.image}'); background-size: cover; background-position: center;`"
+            class="absolute inset-0 w-full h-full"
+            x-show="activeSlide === index"
+            x-transition:enter="transition ease-out duration-1000"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:enter-start="opacity-0 scale-105"
+            x-transition:leave="transition ease-in duration-1000"
+            x-transition:leave-end="opacity-0 scale-105"
+            x-transition:leave-start="opacity-100 scale-100"
+          >
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 via-primary-container/40 to-transparent"></div>
+          </div>
+        </template>
+        <div
+          :style="`background-image: url('${slide.image}'); background-size: cover; background-position: center;`"
+          class="absolute inset-0 w-full h-full"
+          x-show="activeSlide === index"
+          x-transition:enter="transition ease-out duration-1000"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:enter-start="opacity-0 scale-105"
+          x-transition:leave="transition ease-in duration-1000"
+          x-transition:leave-end="opacity-0 scale-105"
+          x-transition:leave-start="opacity-100 scale-100"
+          style="
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5J2BJMRIsDmu6k_Hzgr8551zKl2V90j4G1rKpQeiMhs6uY2JWLUgya1fIw00bPOw_wPxjqTzoJq2Qvqc_CBtZdoW1wmH4gKTOMpj1T8l6iXOPWYiVarJMh7D66299xtwpU-s-AIZRP9qZ2ajcW9fsGk2n-Ze1s0f9g1aMARgGIj-h536qU_0WRYO_V_EELi_hyrFQfQUvrciCkkrd6HlIEa_8gXt6O8l_wZU6MViFeaIJLGqdn3OlQKQctwc1cMdbGMiIQup5hUY');
+            background-size: cover;
+            background-position: center center;
+          "
+        >
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 via-primary-container/40 to-transparent"></div>
+        </div>
+        <div
+          :style="`background-image: url('${slide.image}'); background-size: cover; background-position: center;`"
+          class="absolute inset-0 w-full h-full"
+          x-show="activeSlide === index"
+          x-transition:enter="transition ease-out duration-1000"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:enter-start="opacity-0 scale-105"
+          x-transition:leave="transition ease-in duration-1000"
+          x-transition:leave-end="opacity-0 scale-105"
+          x-transition:leave-start="opacity-100 scale-100"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80');
+            background-size: cover;
+            background-position: center center;
+            display: none;
+          "
+        >
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 via-primary-container/40 to-transparent"></div>
+        </div>
+        <div
+          :style="`background-image: url('${slide.image}'); background-size: cover; background-position: center;`"
+          class="absolute inset-0 w-full h-full"
+          x-show="activeSlide === index"
+          x-transition:enter="transition ease-out duration-1000"
+          x-transition:enter-end="opacity-100 scale-100"
+          x-transition:enter-start="opacity-0 scale-105"
+          x-transition:leave="transition ease-in duration-1000"
+          x-transition:leave-end="opacity-0 scale-105"
+          x-transition:leave-start="opacity-100 scale-100"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80');
+            background-size: cover;
+            background-position: center center;
+            display: none;
+          "
+        >
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 via-primary-container/40 to-transparent"></div>
+        </div>
+        <!-- Content Wrapper -->
+        <div class="relative z-10 w-full max-w-container-max mx-auto px-8 py-xl">
+          <div
+            class="max-w-2xl bg-white/10 backdrop-blur-md p-md rounded-xl border border-white/20 shadow-[0_30px_60px_-15px_rgba(57,20,148,0.12)] min-h-[280px] flex flex-col justify-center"
+          >
+            <template :key="'text-'+index" x-for="(slide, index) in slides">
+              <div
+                x-show="activeSlide === index"
+                x-transition:enter="transition ease-out duration-700 delay-300"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 translate-y-4"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-end="opacity-0 absolute"
+                x-transition:leave-start="opacity-100 absolute"
+              >
+                <h1 class="font-headline-xl text-headline-xl text-on-tertiary mb-md" x-text="slide.title"></h1>
+                <p class="font-body-lg text-body-lg text-inverse-primary mb-lg" x-text="slide.text"></p>
+                <button
+                  class="bg-on-tertiary text-primary-container px-8 py-3 rounded-lg font-label-caps text-label-caps shadow-[0_10px_20px_-5px_rgba(57,20,148,0.1)] hover:bg-inverse-primary"
+                >
+                  Comenzar Hoy
+                </button>
+              </div>
+            </template>
+            <div
+              x-show="activeSlide === index"
+              x-transition:enter="transition ease-out duration-700 delay-300"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:enter-start="opacity-0 translate-y-4"
+              x-transition:leave="transition ease-in duration-300"
+              x-transition:leave-end="opacity-0 absolute"
+              x-transition:leave-start="opacity-100 absolute"
+              class=""
+            >
+              <h1 class="font-headline-xl text-headline-xl text-on-tertiary mb-md" x-text="slide.title" style="">
+                Tu bienestar es nuestra prioridad
+              </h1>
+              <p class="font-body-lg text-body-lg text-inverse-primary mb-lg" x-text="slide.text" style="">
+                Experiencing guided calm through professional psychiatric care and empathetic support tailored to your mental wellness journey.
+              </p>
+              <button
+                class="bg-on-tertiary text-primary-container px-8 py-3 rounded-lg font-label-caps text-label-caps shadow-[0_10px_20px_-5px_rgba(57,20,148,0.1)] hover:bg-inverse-primary"
+                style=""
+              >
+                Comenzar Hoy
+              </button>
+            </div>
+            <div
+              x-show="activeSlide === index"
+              x-transition:enter="transition ease-out duration-700 delay-300"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:enter-start="opacity-0 translate-y-4"
+              x-transition:leave="transition ease-in duration-300"
+              x-transition:leave-end="opacity-0 absolute"
+              x-transition:leave-start="opacity-100 absolute"
+              class=""
+              style="display: none"
+            >
+              <h1 class="font-headline-xl text-headline-xl text-on-tertiary mb-md" x-text="slide.title" style="">Encuentra tu paz interior</h1>
+              <p class="font-body-lg text-body-lg text-inverse-primary mb-lg" x-text="slide.text" style="">
+                Entornos serenos y profesionales capacitados para guiarte hacia una mejor salud mental y equilibrio emocional.
+              </p>
+              <button
+                class="bg-on-tertiary text-primary-container px-8 py-3 rounded-lg font-label-caps text-label-caps shadow-[0_10px_20px_-5px_rgba(57,20,148,0.1)] hover:bg-inverse-primary"
+                style=""
+              >
+                Comenzar Hoy
+              </button>
+            </div>
+            <div
+              x-show="activeSlide === index"
+              x-transition:enter="transition ease-out duration-700 delay-300"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:enter-start="opacity-0 translate-y-4"
+              x-transition:leave="transition ease-in duration-300"
+              x-transition:leave-end="opacity-0 absolute"
+              x-transition:leave-start="opacity-100 absolute"
+              class=""
+              style="display: none"
+            >
+              <h1 class="font-headline-xl text-headline-xl text-on-tertiary mb-md" x-text="slide.title" style="">Apoyo profesional compasivo</h1>
+              <p class="font-body-lg text-body-lg text-inverse-primary mb-lg" x-text="slide.text" style="">
+                Terapias basadas en evidencia diseñadas específicamente para tus necesidades individuales en un espacio seguro.
+              </p>
+              <button
+                class="bg-on-tertiary text-primary-container px-8 py-3 rounded-lg font-label-caps text-label-caps shadow-[0_10px_20px_-5px_rgba(57,20,148,0.1)] hover:bg-inverse-primary"
+                style=""
+              >
+                Comenzar Hoy
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Professionals Section Auto-playing Carousel -->
+      <section class="py-xl bg-surface px-8 overflow-hidden">
+        <div class="max-w-container-max mx-auto">
+          <div class="text-center mb-lg">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-base" style="">Nuestros Profesionales</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto" style="">
+              Un equipo multidisciplinario dedicado a tu salud mental con empatía y experiencia clínica.
+            </p>
+          </div>
+          <!-- Carousel Wrapper -->
+          <div
+            x-data="{
+                scrollPos: 0,
+                itemWidth: 0,
+                init() {
+                    this.$nextTick(() =&gt; {
+                        if(this.$refs.slider.children.length &gt; 0) {
+                            this.itemWidth = this.$refs.slider.children[0].offsetWidth + 24; // 24px is the gap
+                        }
+                    });
+                    setInterval(() =&gt; {
+                        if(!this.itemWidth) return;
+                        this.scrollPos += this.itemWidth;
+                        if(this.scrollPos &gt;= this.$refs.slider.scrollWidth - this.$refs.slider.clientWidth + 10) {
+                            this.scrollPos = 0;
+                        }
+                        this.$refs.slider.scrollTo({left: this.scrollPos, behavior: 'smooth'});
+                    }, 3500);
+                }
+            }"
+          >
+            <div class="flex overflow-x-hidden gap-gutter pb-4 snap-x snap-mandatory" x-ref="slider">
+              <!-- Pro Card 1 -->
+              <div
+                class="group relative min-w-[280px] w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 aspect-[3/4] rounded-xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] cursor-pointer snap-start"
+              >
+                <img
+                  alt="Professional portrait of a female therapist in a modern clinic setting with soft lighting"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  data-alt="Professional portrait of a female therapist in a modern clinic setting with soft lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKTPZTY0PS5yoM_DxHGdz2GaW_fvL3b0qkjOp_VuDJ6NEr3vX_Zzkdfc9hYHRn0s_BOjjlZInLzU4T-QCfdaBCIbT1Wqb_PgxVcfY54TNBuJ-lBDqxuQa433WNKYbZBVf0nrEmilN4VQTzZzA0thIcIuBP_TBtXnrNBgF8R6aSOfG7sQIqweViKyag-pzK39ipBUgeGXt2VLt_6P5sy26Aogb7SMj8BBAKd2zCQwua6OnORKQbGEP5uXsCDFzAaPCUkpcuoMIOEV8"
+                  style=""
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-md">
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary" style="">Dra. Elena Ruiz</h3>
+                  <p class="font-label-caps text-label-caps text-secondary-container mt-xs" style="">Psiquiatra Clínica</p>
+                </div>
+                <div
+                  class="absolute inset-0 bg-primary-container/95 p-md flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary mb-sm" style="">Dra. Elena Ruiz</h3>
+                  <p class="font-body-md text-body-md text-inverse-primary" style="">
+                    Especialista en Ansiedad, Depresión y Trastornos del Estado de Ánimo.
+                  </p>
+                </div>
+              </div>
+              <!-- Pro Card 2 -->
+              <div
+                class="group relative min-w-[280px] w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 aspect-[3/4] rounded-xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] cursor-pointer snap-start"
+              >
+                <img
+                  alt="Professional portrait of a male psychiatrist smiling warmly in a well-lit office"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  data-alt="Professional portrait of a male psychiatrist smiling warmly in a well-lit office"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9PDCrqP56D_4YgMmLiOABVDEROqRJ0T3IE4LlnQMYasvUrdWV77C0XNXvPJjP1L-8DB76cKoTagnI1CSSNlGhG4Lps9bVZB2DZxTgqLg4C1Elo3izY3XZPqp54Olt8Kb3OyH10waiHcacL7TMAeBiO1RwnAovZ9X9Lz6PTa3czJIs1IuCTr2seG8cBEfyjz8q46wFo4d6WbOxtI1NkC-08hH2S4Q_8SLOjRUIWfQmFcUmx08d2WwLkvmTJ_iNkAIMq5ABi7uy0a4"
+                  style=""
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-md">
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary" style="">Dr. Carlos Silva</h3>
+                  <p class="font-label-caps text-label-caps text-secondary-container mt-xs" style="">Psicoterapeuta</p>
+                </div>
+                <div
+                  class="absolute inset-0 bg-primary-container/95 p-md flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary mb-sm" style="">Dr. Carlos Silva</h3>
+                  <p class="font-body-md text-body-md text-inverse-primary" style="">
+                    Especialista en Terapia Cognitivo-Conductual y Manejo del Trauma.
+                  </p>
+                </div>
+              </div>
+              <!-- Pro Card 3 -->
+              <div
+                class="group relative min-w-[280px] w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 aspect-[3/4] rounded-xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] cursor-pointer snap-start"
+              >
+                <img
+                  alt="Portrait of a friendly female psychologist holding a notebook in a modern minimal clinic"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  data-alt="Portrait of a friendly female psychologist holding a notebook in a modern minimal clinic"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbQW9E_ZuA6t7XanPgmy0Tavrc4Z61UcADFfNvtfriiMAdhj2Hx4Sq9AX5KI4WfkZma4KS3i34i1RjIUdmGN4P2CdE6TUYPYv5RN7RyW2JqqI-m7s7FJjvKYzOWu5EoMWPUEp2fqqw6wZGvNlhpjBgGL0ufmc8QAB6sXPhTg7-J44gjHGLbg0Q8Yds0s5Zdvr6rSgRXrLZdmjtEnOUXDopD6VD_84LiDEtRHQtqSD7xaeVN1_DlKIvbiJGQm9l0Cbaatpiu7MK2r0"
+                  style=""
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-md">
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary" style="">Lic. Ana Gómez</h3>
+                  <p class="font-label-caps text-label-caps text-secondary-container mt-xs" style="">Psicóloga Clínica</p>
+                </div>
+                <div
+                  class="absolute inset-0 bg-primary-container/95 p-md flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary mb-sm" style="">Lic. Ana Gómez</h3>
+                  <p class="font-body-md text-body-md text-inverse-primary" style="">Especialista en Terapia de Pareja y Dinámicas Familiares.</p>
+                </div>
+              </div>
+              <!-- Pro Card 4 -->
+              <div
+                class="group relative min-w-[280px] w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 aspect-[3/4] rounded-xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] cursor-pointer snap-start"
+              >
+                <img
+                  alt="Professional headshot of a mature male doctor with glasses conveying wisdom and trust"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  data-alt="Professional headshot of a mature male doctor with glasses conveying wisdom and trust"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlGomRYURdwyLP7Iu802AtMPPFFi00xo5uJUKRA373njqI8Jgns0HqCwVsLk8Gtt-AtOU048KYcotk2rJkMhgXrUxCu-A_zKPTtt8o_VmUeShIztYnukFu0_o9hPRFjBNqZ3h1tCffaiyB_geDTS0z-fRczuYTw-XZa1ZYdZfPS-07l0shbLkNScMUzvw_DaY0E9aQEv-0f-0GOTxari6mtnL-N_OzFfm-OgGqpexF8ei1mwTjorB_71bUiR1MNkK69JpilNeKga8"
+                  style=""
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-md">
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary" style="">Dr. Luis Medina</h3>
+                  <p class="font-label-caps text-label-caps text-secondary-container mt-xs" style="">Neuropsiquiatra</p>
+                </div>
+                <div
+                  class="absolute inset-0 bg-primary-container/95 p-md flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary mb-sm" style="">Dr. Luis Medina</h3>
+                  <p class="font-body-md text-body-md text-inverse-primary" style="">
+                    Especialista en Trastornos del Neurodesarrollo y Evaluación Cognitiva.
+                  </p>
+                </div>
+              </div>
+              <!-- Pro Card 5 (Duplicate for continuous feel in carousel) -->
+              <div
+                class="group relative min-w-[280px] w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] shrink-0 aspect-[3/4] rounded-xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] cursor-pointer snap-start block lg:hidden xl:block"
+              >
+                <img
+                  alt="Professional portrait of a female therapist in a modern clinic setting with soft lighting"
+                  class="absolute inset-0 w-full h-full object-cover"
+                  data-alt="Professional portrait of a female therapist in a modern clinic setting with soft lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKTPZTY0PS5yoM_DxHGdz2GaW_fvL3b0qkjOp_VuDJ6NEr3vX_Zzkdfc9hYHRn0s_BOjjlZInLzU4T-QCfdaBCIbT1Wqb_PgxVcfY54TNBuJ-lBDqxuQa433WNKYbZBVf0nrEmilN4VQTzZzA0thIcIuBP_TBtXnrNBgF8R6aSOfG7sQIqweViKyag-pzK39ipBUgeGXt2VLt_6P5sy26Aogb7SMj8BBAKd2zCQwua6OnORKQbGEP5uXsCDFzAaPCUkpcuoMIOEV8"
+                  style=""
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-full p-md">
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary" style="">Dra. Elena Ruiz</h3>
+                  <p class="font-label-caps text-label-caps text-secondary-container mt-xs" style="">Psiquiatra Clínica</p>
+                </div>
+                <div
+                  class="absolute inset-0 bg-primary-container/95 p-md flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <h3 class="font-headline-md text-headline-md text-on-tertiary mb-sm" style="">Dra. Elena Ruiz</h3>
+                  <p class="font-body-md text-body-md text-inverse-primary" style="">
+                    Especialista en Ansiedad, Depresión y Trastornos del Estado de Ánimo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Services Section -->
+      <section class="py-xl bg-surface-container-low px-8">
+        <div class="max-w-container-max mx-auto">
+          <div class="text-center mb-lg">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mb-base" style="">Nuestros Servicios</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto" style="">
+              Enfoques terapéuticos diseñados para restaurar el equilibrio y promover el bienestar integral.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Service 1 -->
+            <div
+              class="bg-surface-container-lowest p-lg rounded-xl shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] flex flex-col items-center text-center border border-outline-variant/30"
+            >
+              <div class="w-16 h-16 rounded-full bg-secondary-container/30 flex items-center justify-center mb-md">
+                <span class="material-symbols-outlined text-on-secondary-container text-4xl" style="">psychology</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-sm" style="">Terapia Individual</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant" style="">
+                Espacio seguro y confidencial para explorar emociones, superar bloqueos y desarrollar herramientas de afrontamiento personal.
+              </p>
+            </div>
+            <!-- Service 2 -->
+            <div
+              class="bg-surface-container-lowest p-lg rounded-xl shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] flex flex-col items-center text-center border border-outline-variant/30"
+            >
+              <div class="w-16 h-16 rounded-full bg-secondary-container/30 flex items-center justify-center mb-md">
+                <span class="material-symbols-outlined text-on-secondary-container text-4xl" style="">diversity_1</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-sm" style="">Terapia de Pareja</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant" style="">
+                Intervención enfocada en mejorar la comunicación, resolver conflictos y fortalecer el vínculo afectivo en la relación.
+              </p>
+            </div>
+            <!-- Service 3 -->
+            <div
+              class="bg-surface-container-lowest p-lg rounded-xl shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] flex flex-col items-center text-center border border-outline-variant/30"
+            >
+              <div class="w-16 h-16 rounded-full bg-secondary-container/30 flex items-center justify-center mb-md">
+                <span class="material-symbols-outlined text-on-secondary-container text-4xl" style="">medical_services</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-on-surface mb-sm" style="">Psiquiatría</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant" style="">
+                Evaluación médica especializada, diagnóstico preciso y manejo farmacológico responsable para trastornos mentales.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Psico-Education Section -->
+      <section class="py-xl bg-surface px-8">
+        <div class="max-w-container-max mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-end mb-lg">
+            <div class="max-w-2xl">
+              <h2 class="font-headline-lg text-headline-lg text-on-surface mb-base" style="">Psico-Educación</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant" style="">
+                Recursos y conocimientos para empoderarte en la gestión diaria de tu salud mental.
+              </p>
+            </div>
+            <button
+              class="text-primary-container font-label-caps text-label-caps flex items-center gap-xs mt-sm md:mt-0 hover:text-surface-tint"
+              style=""
+            >
+              Ver Todos
+              <span class="material-symbols-outlined text-sm" style="">arrow_forward</span>
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+            <!-- Edu Card 1 -->
+            <div
+              class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] border border-outline-variant/30 flex flex-col md:flex-row"
+            >
+              <div class="w-full md:w-2/5 aspect-[16/9] md:aspect-auto">
+                <img
+                  alt="Person practicing mindfulness and stress management by a calm lake at sunrise"
+                  class="w-full h-full object-cover"
+                  data-alt="Person practicing mindfulness and stress management by a calm lake at sunrise"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTuIoCFZGbQ9sk_gZqx_Rpe9ygTEnPQ2nQLJUhf_Qiwa_8bI3WZbQz4ilP2PO4EucByrybTflBjl0vZ61r_dLLVp4hourpwCHuMlgNZn7rBhv_bpJ9E2QykxBIXglDAr1ne9RUJYf7KP7-BsSpY1Lpm-GRhttQeQwQTq4h9rkO_ssl7wARlhG-E8QgrnXa_T7aITLJDXR-9C3oPZrhjp_TNbxzb2IrnfXbqDBl1FsFFszjqOGNmkeQmTAg8LKbx_p03nZRXyOKSWY"
+                  style=""
+                />
+              </div>
+              <div class="p-md w-full md:w-3/5 flex flex-col justify-center">
+                <span class="font-label-caps text-label-caps text-secondary px-3 py-1 bg-secondary-container/20 rounded-full w-fit mb-sm" style="">
+                  5 Min Lectura
+                </span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm" style="">Manejo del Estrés</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" style="">
+                  Técnicas prácticas y basadas en evidencia para reducir la carga alostática y recuperar la calma en situaciones de alta presión.
+                </p>
+              </div>
+            </div>
+            <!-- Edu Card 2 -->
+            <div
+              class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] border border-outline-variant/30 flex flex-col md:flex-row"
+            >
+              <div class="w-full md:w-2/5 aspect-[16/9] md:aspect-auto">
+                <img
+                  alt="Cozy bedroom setting with soft natural light promoting healthy sleep hygiene"
+                  class="w-full h-full object-cover"
+                  data-alt="Cozy bedroom setting with soft natural light promoting healthy sleep hygiene"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY6GS9ixrtWLA2subV8k2yRWBCi8mlZTb8r_vBqCCTjwLhGkPoKeHMDQSLPNELNmGgfky5A4i_cb6kNa1x-2xjaky21y9qHITHfHXLROb7U962ASin8n3sxxd94rC82GDU9cOVhi8Nd4hN8hxZtZHnmnAJMwCwXv9IaCuRqCipO4_nn7Z4pGCommtGlieFybIYbg_i_-DLd0d8iP3RNQ1-5TuoFLs9nIpyTK8-MKmtELF3pbemvdlSvsHdGm5xFplAyog_0DA43iU"
+                  style=""
+                />
+              </div>
+              <div class="p-md w-full md:w-3/5 flex flex-col justify-center">
+                <span class="font-label-caps text-label-caps text-secondary px-3 py-1 bg-secondary-container/20 rounded-full w-fit mb-sm" style="">
+                  7 Min Lectura
+                </span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-sm" style="">Higiene del Sueño</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2" style="">
+                  Rutinas esenciales y ajustes ambientales para combatir el insomnio y asegurar un descanso profundo y reparador.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer from JSON Components -->
+    <footer
+      class="bg-slate-50 dark:bg-slate-950 w-full py-12 border-t border-slate-200 dark:border-slate-800 text-[#391494] dark:text-purple-400 font-manrope text-sm leading-relaxed"
+    >
+      <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
+        <div class="flex flex-col gap-sm">
+          <div class="text-xl font-black text-[#391494] dark:text-purple-300 mb-xs" style="">Psiquimed</div>
+          <p class="text-slate-500 dark:text-slate-400" style="">© 2026 Psiquimed.&nbsp;Calma guiada para el bienestar mental</p>
+          <div class="flex gap-4 mt-4">
+            <a aria-label="Facebook" class="text-[#391494] hover:text-[#D2A0DF] dark:hover:text-[#F89DE7] transition-colors" href="#" style="">
+              <span class="material-symbols-outlined text-3xl" style="">public</span>
+            </a>
+            <a aria-label="Instagram" class="text-[#391494] hover:text-[#D2A0DF] dark:hover:text-[#F89DE7] transition-colors" href="#" style="">
+              <span class="material-symbols-outlined text-3xl" style="">share</span>
+            </a>
+            <a aria-label="TikTok" class="text-[#391494] hover:text-[#D2A0DF] dark:hover:text-[#F89DE7] transition-colors" href="#" style="">
+              <span class="material-symbols-outlined text-3xl" style="">videocam</span>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col gap-sm">
+          <h4 class="font-headline-md text-headline-md text-[#391494] dark:text-purple-300" style="">Enlaces</h4>
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-[#D2A0DF] dark:hover:text-[#F89DE7] transition-colors outline-none focus:ring-2 focus:ring-purple-200"
+            href="#"
+            style=""
+          >
+            Horarios de atención
+          </a>
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-[#D2A0DF] dark:hover:text-[#F89DE7] transition-colors outline-none focus:ring-2 focus:ring-purple-200"
+            href="#"
+            style=""
+          >
+            Google Maps
+          </a>
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-[#D2A0DF] dark:hover:text-[#F89DE7] transition-colors outline-none focus:ring-2 focus:ring-purple-200"
+            href="#"
+            style=""
+          >
+            WhatsApp&nbsp;
+          </a>
+          <a
+            class="text-slate-500 dark:text-slate-400 hover:text-[#D2A0DF] dark:hover:text-[#F89DE7] transition-colors outline-none focus:ring-2 focus:ring-purple-200"
+            href="#"
+            style=""
+          >
+            Políticas de privacidad
+          </a>
+        </div>
+        <div class="flex flex-col gap-sm col-span-1 md:col-span-2">
+          <h4 class="font-headline-md text-headline-md text-[#391494] dark:text-purple-300" style="">Ubicación</h4>
+          <div class="w-full h-48 bg-surface-variant rounded-xl flex items-center justify-center overflow-hidden border border-outline-variant/30">
+            <img
+              alt="Map placeholder showing city streets"
+              class="w-full h-full object-cover opacity-50 grayscale"
+              data-alt="Stylized map showing a minimal elegant street view with a subtle pin drop"
+              data-location="Ciudad de México"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIDU6ik5RikERAtdo0X1OBvDIVscwtW_EyfpgQJVbZxwttdFv5OVepcL2YWw3bXWG9oN7HT-gc7a3X2PK9fYzhNEI5GNMvQnFf8nDxPfLp-_67Nc0tHFUA2ZozP41Sb8KvF0PYat9Qij4pj4lhbMqQ5SH-bVVJ5xDb03X1IhJ2leF6tJ4bYmHxjB611xnm3WdjMw_SnXVwRLAG_XsdSqnN8XQuCoY23s8xXY1OrHHuetPaYGPdxhUn6ikwHZDubC47S52vsrjjm5w"
+              style=""
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Floating Action Button (Updated to Component Style) -->
+    <button
+      aria-label="WhatsApp Support"
+      class="fixed bottom-8 right-8 bg-green-500 dark:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center z-50 shadow-lg shadow-green-200 dark:shadow-none hover:scale-110 transition-transform active:scale-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      style=""
+    >
+      <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">chat</span>
+    </button>
+  </body>
+</html>
