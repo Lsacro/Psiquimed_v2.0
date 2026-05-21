@@ -1,8 +1,16 @@
+import EducationContainer from '../components/container/EducationContainer';
+import ServicesContainer from '../components/container/ServicesContainer';
+import DoctorSlider from '../components/slider/DoctorSlider';
+import HeroSlider from '../components/slider/HeroSlider';
+
 function HomePage() {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <>
+      <HeroSlider />
+      <DoctorSlider />
+      <ServicesContainer />
+      <EducationContainer />
+    </>
   );
 }
 
