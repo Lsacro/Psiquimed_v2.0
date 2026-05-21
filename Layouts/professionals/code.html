@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profesionales - Psiquimed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#e7deff",
+                      "tertiary-fixed-dim": "#e8b5f5",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#1e0060",
+                      "background": "#f9f9fb",
+                      "surface-container-high": "#e8e8ea",
+                      "on-primary-fixed-variant": "#4c2ea6",
+                      "inverse-on-surface": "#f0f0f2",
+                      "secondary-fixed": "#fad7ff",
+                      "primary-container": "#391494",
+                      "on-secondary-fixed": "#330143",
+                      "inverse-surface": "#2f3132",
+                      "surface-container": "#edeef0",
+                      "on-surface": "#1a1c1d",
+                      "on-surface-variant": "#484553",
+                      "secondary-fixed-dim": "#edb2fb",
+                      "outline": "#797584",
+                      "tertiary-container": "#4c245a",
+                      "surface-dim": "#d9dadc",
+                      "on-secondary-container": "#724181",
+                      "error": "#ba1a1a",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1a1c1d",
+                      "inverse-primary": "#ccbeff",
+                      "surface-tint": "#6449c0",
+                      "on-secondary-fixed-variant": "#633372",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "secondary": "#7d4b8c",
+                      "surface-variant": "#e2e2e4",
+                      "primary": "#23006b",
+                      "outline-variant": "#cac4d5",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f3f3f5",
+                      "surface-container-highest": "#e2e2e4",
+                      "on-tertiary-fixed-variant": "#60366d",
+                      "surface": "#f9f9fb",
+                      "surface-bright": "#f9f9fb",
+                      "on-tertiary-container": "#bd8cca",
+                      "secondary-container": "#f0b4fe",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#30073e",
+                      "on-primary-container": "#a48cff",
+                      "tertiary": "#340c43",
+                      "tertiary-fixed": "#fad7ff",
+                      "primary-fixed-dim": "#ccbeff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "80px",
+                      "base": "8px",
+                      "md": "24px",
+                      "lg": "48px",
+                      "container-max": "1200px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-md": ["Manrope"],
+                      "headline-md": ["Manrope"],
+                      "headline-lg": ["Manrope"],
+                      "label-caps": ["Inter"],
+                      "body-lg": ["Manrope"],
+                      "headline-xl": ["Manrope"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom scrollbar for filter area if needed */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-950 docked full-width top-0 z-50 border-b border-indigo-50 dark:border-indigo-900/30 shadow-sm shadow-indigo-900/5 font-manrope antialiased sticky">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-6 h-20 w-full">
+<div class="text-2xl font-extrabold tracking-tight text-indigo-900 dark:text-indigo-100">
+                Psiquimed
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors font-body-md text-body-md" href="#">Inicio</a>
+<a class="text-indigo-900 dark:text-indigo-300 border-b-2 border-indigo-900 dark:border-indigo-300 pb-1 font-semibold font-body-md text-body-md" href="#">Profesionales</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors font-body-md text-body-md" href="#">Servicios</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors font-body-md text-body-md" href="#">Educación</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors font-body-md text-body-md" href="#">Contacto</a>
+</nav>
+<button class="bg-primary-container text-white px-6 py-2 rounded-lg font-label-caps text-label-caps hover:bg-primary transition-colors hidden md:block">
+                Reservar Cita
+            </button>
+<button class="md:hidden text-indigo-900">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="w-full pt-xl pb-lg px-6">
+<div class="max-w-container-max mx-auto text-center">
+<h1 class="font-headline-xl text-headline-xl text-primary-container mb-md">Nuestro Equipo de Especialistas</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                    Comprometidos con su bienestar mental, nuestro equipo interdisciplinario de expertos ofrece atención cálida, basada en la evidencia y centrada en sus necesidades específicas para guiarle hacia una vida más equilibrada.
+                </p>
+</div>
+</section>
+<!-- Filters & Content -->
+<section class="w-full pb-xl px-6">
+<div class="max-w-container-max mx-auto">
+<!-- Filters -->
+<div class="flex overflow-x-auto hide-scrollbar gap-sm mb-lg pb-2 justify-start md:justify-center border-b border-surface-variant px-2 md:px-0">
+<button class="px-6 py-2 rounded-full font-label-caps text-label-caps uppercase bg-primary-container text-white whitespace-nowrap transition-colors flex-shrink-0">
+                        Todos
+                    </button>
+<button class="px-6 py-2 rounded-full font-label-caps text-label-caps uppercase bg-surface-container hover:bg-surface-variant text-on-surface-variant whitespace-nowrap transition-colors flex-shrink-0">
+                        Psiquiatría
+                    </button>
+<button class="px-6 py-2 rounded-full font-label-caps text-label-caps uppercase bg-surface-container hover:bg-surface-variant text-on-surface-variant whitespace-nowrap transition-colors flex-shrink-0">
+                        Psicología
+                    </button>
+<button class="px-6 py-2 rounded-full font-label-caps text-label-caps uppercase bg-surface-container hover:bg-surface-variant text-on-surface-variant whitespace-nowrap transition-colors flex-shrink-0">
+                        Terapia
+                    </button>
+<button class="px-6 py-2 rounded-full font-label-caps text-label-caps uppercase bg-surface-container hover:bg-surface-variant text-on-surface-variant whitespace-nowrap transition-colors flex-shrink-0">
+                        Neuropsicología
+                    </button>
+</div>
+<!-- Bento Grid of Professionals -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md lg:gap-gutter">
+<!-- Card 1 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface aspect-[3/4] shadow-md shadow-primary-container/10 hover:shadow-2xl hover:shadow-primary-container/30 hover:-translate-y-2 transition-all duration-500 ease-out">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Portrait of a female doctor with a warm smile, wearing a white coat in a modern, well-lit clinic setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQcXyWCCAJ2zvtoBrlO1FRiTp_bvfNXllZBkQKr6q-p0d-apMBVeqhpnbzBouRnJsjIDdyJ8h8NJfh9Sz6YRE8iK_jTLC_rXJZMro5fYGH4l04NMMOml2nDARgpKgktp-_ES-PE3WWSuhsUInx0L1rKmpiK6YBwDD1FhasaTSm9Mlq_P0fT-SocJVYrbkYPL-Aa-siu99vHbwNBeh1wGnhynIfMxh45Q9G0hv8zChXWhvxSdbG6lmGDKUG50PDKHj7koY7RDc1a0E"/><div class="absolute inset-0 bg-[#391494]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80 group-hover:via-black/40 z-10"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end z-20">
+<div class="transform transition-transform duration-500 group-hover:-translate-y-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-wider uppercase mb-2 block">Psiquiatría</span>
+<h3 class="font-headline-md text-headline-md text-white">Dra. Elena Ruiz</h3>
+</div>
+<div class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+<div class="overflow-hidden">
+<p class="font-body-md text-body-md text-inverse-primary mt-2 mb-2 line-clamp-2">
+                                        Especialista en trastornos del estado de ánimo y abordajes psicofarmacológicos.
+                                    </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Trastornos del ánimo</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Ansiedad</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Psicofarmacología</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase py-3 rounded-lg hover:bg-secondary-fixed transition-colors">
+                                        Agendar Cita
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface aspect-[3/4] shadow-md shadow-primary-container/10 hover:shadow-2xl hover:shadow-primary-container/30 hover:-translate-y-2 transition-all duration-500 ease-out">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Portrait of a male psychologist looking attentive and professional in a softly lit consulting room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCpvLS_qjFjjgNuFiAZlJ68ENAbtj_5HSS3Z7n1BnuwDYcSbxwWDw4_B1_LjfwAW8GG-KP5VwhAi0j_FSVCdEt9AyWUdQE0Lpha7h8mIabxpK63H-VSkCzBrvsUW27y2GDQBEh_UJO5AXkaAfGE_lNRH974ssKvHiAUQY1AxRYKdgigaLeeBED1PLSjm95m3P2The_3RynVuB4hKOw0zx6DSZktWLzua4ONKfRdTWT1RE71NqvcelVHB7NZJPKL64wcqpAGpfZdXg"/><div class="absolute inset-0 bg-[#391494]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80 group-hover:via-black/40 z-10"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end z-20">
+<div class="transform transition-transform duration-500 group-hover:-translate-y-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-wider uppercase mb-1 block">Psicología</span>
+<h3 class="font-headline-md text-headline-md text-white">Dr. Carlos Silva</h3>
+</div>
+<div class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+<div class="overflow-hidden">
+<p class="font-body-md text-body-md text-inverse-primary mt-2 mb-2 line-clamp-2">
+                                        Experto en terapia cognitivo-conductual, manejo del estrés y terapia de pareja.
+                                    </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Terapia cognitivo-conductual</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Depresión</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Autoestima</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase py-3 rounded-lg hover:bg-secondary-fixed transition-colors">
+                                        Agendar Cita
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface aspect-[3/4] shadow-md shadow-primary-container/10 hover:shadow-2xl hover:shadow-primary-container/30 hover:-translate-y-2 transition-all duration-500 ease-out">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Professional portrait of a female neuropsychologist in a bright, modern office space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlNFlghUoCxkWwwz4YrkKDBLSl7RPFulDbO9qtJOZ1kOo9D44newVYnWoJMGUlQXjvOSAU58wxqSFGyT9k48F7aCL_1LL0a8x0864g8FOqdgTR0q71Tcy5RJG_r7q5V2MZHessSFPTcokro6s5GZXuwOT8x_IRPKySbU16NksR3Or0YvskBTx_hz6VpdShG2v_AB5wmwqslQiWAo6GiUj4tKexUk5K0QJeQa0kVzFZ2Wlay7aVPut0meRKYHDPk3nqHrMUDxjUm4o"/><div class="absolute inset-0 bg-[#391494]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80 group-hover:via-black/40 z-10"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end z-20">
+<div class="transform transition-transform duration-500 group-hover:-translate-y-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-wider uppercase mb-1 block">Neuropsicología</span>
+<h3 class="font-headline-md text-headline-md text-white">Lic. Ana Gómez</h3>
+</div>
+<div class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+<div class="overflow-hidden">
+<p class="font-body-md text-body-md text-inverse-primary mt-2 mb-2 line-clamp-2">
+                                        Especializada en evaluación cognitiva, TDAH en adultos y rehabilitación neuropsicológica.
+                                    </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Evaluación cognitiva</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Rehabilitación de memoria</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">TDAH</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase py-3 rounded-lg hover:bg-secondary-fixed transition-colors">
+                                        Agendar Cita
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface aspect-[3/4] shadow-md shadow-primary-container/10 hover:shadow-2xl hover:shadow-primary-container/30 hover:-translate-y-2 transition-all duration-500 ease-out">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Friendly male child psychiatrist sitting in a colorful, welcoming consultation room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCqfAtBcgbchGfQCZkXNqM8endAzsCMXL6CsYxAhDRyKn_mmhjSGoP-ysWPO8JgTqbXCaoNzPHzoDjXYVyQEyIuu0Mygh6Yuz1xvI4wKSm1VdBgZ8pgNeu6Lvyj7QCXTQ3xbX8XTdQht0mVRbK0AlG23Y3mj8mSVqTe7regmP3DOAfI_ED4PxyTOZ1Zxy-lVYUiokrFSS4v8SO9exQfJe1wP93p6yCJ4dLMN-GaMLJXKG4fv8AHnHXmQrVGswrTEbTvK7gXK75fTs"/><div class="absolute inset-0 bg-[#391494]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80 group-hover:via-black/40 z-10"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end z-20">
+<div class="transform transition-transform duration-500 group-hover:-translate-y-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-wider uppercase mb-1 block">Psiquiatría Infantil</span>
+<h3 class="font-headline-md text-headline-md text-white">Dr. Luis Medina</h3>
+</div>
+<div class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+<div class="overflow-hidden">
+<p class="font-body-md text-body-md text-inverse-primary mt-2 mb-2 line-clamp-2">
+                                        Atención integral en trastornos del neurodesarrollo, autismo y problemas conductuales.
+                                    </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Trastornos del desarrollo</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Autismo</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Ansiedad infantil</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase py-3 rounded-lg hover:bg-secondary-fixed transition-colors">
+                                        Agendar Cita
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface aspect-[3/4] shadow-md shadow-primary-container/10 hover:shadow-2xl hover:shadow-primary-container/30 hover:-translate-y-2 transition-all duration-500 ease-out">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Professional male therapist looking thoughtful, set against a calming grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtSDU_h6JfhUtKzSoJ5o9azIUU_0qJJKHspQp_Or0LewP6Ph5RGeLTAOqNYnxQ9kGG1VmxqCjEcCV7GXa41dQ0i99_LG9fC0ABHDIRVHICc95gxn06Pu5Ei6tUA81VcTVAsALKC9_oLqhz7r0YUf9zRTkGv0TiVBzrnFOwhbWghmfcd99CR3ra5uYUUV7SJUhUnkHhNJb5MXhaRhpUnTKLanY02yqrWLALs_cEFGAz7vbP1IBBCKdp-G0jwc_FV0TD_GjKrsAQcDI"/><div class="absolute inset-0 bg-[#391494]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80 group-hover:via-black/40 z-10"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end z-20">
+<div class="transform transition-transform duration-500 group-hover:-translate-y-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-wider uppercase mb-1 block">Terapia</span>
+<h3 class="font-headline-md text-headline-md text-white">Dr. Ricardo Mendoza</h3>
+</div>
+<div class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+<div class="overflow-hidden">
+<p class="font-body-md text-body-md text-inverse-primary mt-2 mb-2 line-clamp-2">
+                                        Especialista en fobias, TOC y trastornos de pánico mediante terapia de exposición.
+                                    </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Terapia de pareja</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Resolución de conflictos</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Mediación familiar</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase py-3 rounded-lg hover:bg-secondary-fixed transition-colors">
+                                        Agendar Cita
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface aspect-[3/4] shadow-md shadow-primary-container/10 hover:shadow-2xl hover:shadow-primary-container/30 hover:-translate-y-2 transition-all duration-500 ease-out">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Female psychiatrist in a serene clinical setting, exuding calm and expertise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaPK3jODTZeOji6gH1UBmLpdlSa3nh0N1B2a0BJJjk9h63GJNJMQf6H5mA1tWblQJw7XUUtIuwDBsjP8Hf1zCAHZPGtz24-gs62W18f95oS2HvXu-ysf7snLIGR8GU8Z2wSHiGSh3RT_jhj_NM1idBVPtpZMlFpgIIMHMH1P4heSwdRZMZSVc513mjXXb1GzTkcpHsM4DBU6hliNWivb3Z17CEcVlPz3mOC57i3JYTZU2LZqLG1ntRaCXOJNEKsK3FEBt2gARUnkY"/><div class="absolute inset-0 bg-[#391494]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80 group-hover:via-black/40 z-10"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end z-20">
+<div class="transform transition-transform duration-500 group-hover:-translate-y-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-wider uppercase mb-1 block">Psiquiatría</span>
+<h3 class="font-headline-md text-headline-md text-white">Dra. Sofía Varela</h3>
+</div>
+<div class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+<div class="overflow-hidden">
+<p class="font-body-md text-body-md text-inverse-primary mt-2 mb-2 line-clamp-2">
+                                        Psiquiatría de enlace y medicina psicosomática. Tratamiento de trastornos del sueño.
+                                    </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Salud mental perinatal</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Trastornos bipolares</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Psicosis</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase py-3 rounded-lg hover:bg-secondary-fixed transition-colors">
+                                        Agendar Cita
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="relative group overflow-hidden rounded-xl bg-surface aspect-[3/4] shadow-md shadow-primary-container/10 hover:shadow-2xl hover:shadow-primary-container/30 hover:-translate-y-2 transition-all duration-500 ease-out">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Young male psychologist looking empathetic and attentive in a warm, inviting therapy room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPI6wybOZTixzFbwndfMLTyYLatGHrfXtYLOzh3BUZ0bHLFwYVKH7y4WwRq6ZitfA29cOZyGXLa278LX0oPC2coNe2VRnz9jwy-ADtvZOQM15gZR1xkmz_DEZB-lf1rEm05p7EO3CTodHFV_HS6gYU1yz_Ycl4U2c0YoxXRGaYdsXulxgIRY2ceHBVoigCvN4SUIBeBPq2O7OYh4g3rI7QMq8cw4QXTDrot-0M5M2wl6lG9HxBZRcJWZnyqSeneKbxVc4A4wbVH2k"/><div class="absolute inset-0 bg-[#391494]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/80 group-hover:via-black/40 z-10"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end z-20">
+<div class="transform transition-transform duration-500 group-hover:-translate-y-4">
+<span class="font-label-caps text-label-caps text-tertiary-fixed-dim tracking-wider uppercase mb-1 block">Psicología</span>
+<h3 class="font-headline-md text-headline-md text-white">Lic. Gabriel Torres</h3>
+</div>
+<div class="grid grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100 transition-all duration-500 ease-in-out">
+<div class="overflow-hidden">
+<p class="font-body-md text-body-md text-inverse-primary mt-2 mb-2 line-clamp-2">
+                                        Acompañamiento en procesos de duelo, crisis vitales y desarrollo de la autoestima.
+                                    </p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Adolescentes</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Gestión del estrés</span>
+<span class="bg-primary-container/60 text-white border border-white/20 font-label-caps text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Orientación vocacional</span>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-caps text-label-caps uppercase py-3 rounded-lg hover:bg-secondary-fixed transition-colors">
+                                        Agendar Cita
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating WhatsApp Action Button -->
+<a aria-label="Contactar por WhatsApp" class="fixed bottom-8 right-8 z-50 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white w-14 h-14 rounded-lg shadow-lg shadow-emerald-900/20 hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center group" href="#">
+<span class="material-symbols-outlined transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">forum</span>
+</a>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 docked full-width border-t border-indigo-100 dark:border-indigo-800/50 font-manrope text-sm mt-auto">
+<div class="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-lg font-bold text-indigo-900 dark:text-indigo-200">
+                Psiquimed
+            </div>
+<div class="text-slate-500 dark:text-slate-400">
+                © 2024 Psiquimed. Centro de Salud Mental Especializado.
+            </div>
+<nav class="flex flex-wrap justify-center gap-4">
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:underline transition-all" href="#">Aviso Legal</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:underline transition-all" href="#">Privacidad</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:underline transition-all" href="#">Cookies</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:underline transition-all" href="#">Facebook</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:underline transition-all" href="#">Instagram</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 hover:underline transition-all" href="#">LinkedIn</a>
+</nav>
+</div>
+</footer>
+</body></html>

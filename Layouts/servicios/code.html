@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Servicios - Psiquimed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#f0f0f2",
+                        "background": "#f9f9fb",
+                        "secondary-container": "#f0b4fe",
+                        "surface-variant": "#e2e2e4",
+                        "on-primary-container": "#a48cff",
+                        "primary-container": "#391494",
+                        "primary": "#23006b",
+                        "surface-bright": "#f9f9fb",
+                        "secondary": "#7d4b8c",
+                        "outline": "#797584",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#4c245a",
+                        "secondary-fixed": "#fad7ff",
+                        "outline-variant": "#cac4d5",
+                        "on-surface": "#1a1c1d",
+                        "inverse-primary": "#ccbeff",
+                        "on-tertiary-fixed": "#30073e",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2f3132",
+                        "primary-fixed-dim": "#ccbeff",
+                        "on-primary-fixed-variant": "#4c2ea6",
+                        "tertiary-fixed": "#fad7ff",
+                        "surface": "#f9f9fb",
+                        "on-tertiary-container": "#bd8cca",
+                        "surface-container": "#edeef0",
+                        "secondary-fixed-dim": "#edb2fb",
+                        "on-secondary-fixed": "#330143",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e8ea",
+                        "tertiary": "#340c43",
+                        "surface-container-highest": "#e2e2e4",
+                        "surface-container-low": "#f3f3f5",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1c1d",
+                        "on-secondary-container": "#724181",
+                        "on-tertiary-fixed-variant": "#60366d",
+                        "on-surface-variant": "#484553",
+                        "surface-dim": "#d9dadc",
+                        "primary-fixed": "#e7deff",
+                        "surface-tint": "#6449c0",
+                        "on-primary-fixed": "#1e0060",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#e8b5f5",
+                        "on-secondary-fixed-variant": "#633372"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "container-max": "1200px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "headline-xl": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-white/95 dark:bg-slate-950/95 backdrop-blur-md sticky top-0 z-50 border-b border-indigo-50 dark:border-indigo-900/30 shadow-sm shadow-indigo-900/5">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
+<div class="text-2xl font-bold tracking-tighter text-indigo-900 dark:text-indigo-100">Psiquimed</div>
+<div class="hidden md:flex space-x-8">
+<a class="font-manrope text-base font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300 transition-colors" href="#">Home</a>
+<a class="font-manrope text-base font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300 transition-colors" href="#">Professionals</a>
+<a class="font-manrope text-base font-medium tracking-tight text-indigo-900 dark:text-white font-bold border-b-2 border-indigo-900 dark:border-indigo-400 pb-1" href="#">Services</a>
+<a class="font-manrope text-base font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300 transition-colors" href="#">Education</a>
+<a class="font-manrope text-base font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300 transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary hover:bg-primary px-6 py-2 rounded-lg font-body-md font-medium transition-colors shadow-sm shadow-primary-container/20">Book Appointment</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-xl pb-xl px-6 bg-surface overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-fixed to-surface-container opacity-50 z-0"></div>
+<div class="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps text-secondary-container bg-secondary-container/10 px-3 py-1 rounded-full mb-6 inline-block uppercase tracking-wider text-primary">Cuidado Integral</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-6">Nuestros Servicios Especializados</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 text-lg">Brindamos un espacio seguro y profesional para acompañarte en tu bienestar mental, con tratamientos basados en la empatía y la excelencia clínica.</p>
+<button class="bg-primary-container text-on-primary px-8 py-3 rounded-lg font-body-md font-medium hover:bg-primary transition-colors shadow-[0_10px_30px_rgba(57,20,148,0.12)]">Conoce nuestro equipo</button>
+</div>
+<div class="relative h-[400px] rounded-xl overflow-hidden shadow-[0_30px_60px_rgba(57,20,148,0.12)] border border-outline-variant/30">
+<img alt="Profesional de salud mental sonriendo en un consultorio moderno y luminoso" class="w-full h-full object-cover" data-alt="Female therapist in modern bright office, soft lighting, compassionate smile, professional attire, calming environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_UXv-CrNWNwPUI5MRhK0eXQW8WSblzaNQ61tDBS9yQttwPZMV4VaR3UmQCxqWrDoIVATa4ujzniogbNopMHMmbany5kXfebKq5Uzx71P1tsG6ktWNERufihegk7a7rrWQFy-XuPsbeWTn1c5HBuRWldQj_PWTFS8G7F5yb_dRiAkbPzeeTetIVod0YNXCqr_JpLsrl3uLXOALaRxuSDCwdGAG1rnm13bLhKHNnpfvOLNaqcBdgVxgrIgHR2n-0-j5-KnFIkdPynI"/>
+</div>
+</div>
+</section>
+<!-- Services Grid (Bento Style) -->
+<section class="py-xl px-6 bg-background">
+<div class="max-w-[1200px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Soluciones para tu bienestar</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Enfoques terapéuticos diseñados a la medida de tus necesidades, guiados por especialistas en salud mental.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Service 1: Terapia Individual -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 group flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Terapia Individual</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Un espacio seguro para explorar tus emociones, gestionar la ansiedad y trabajar en tu crecimiento personal.</p>
+<a class="text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto" href="#">
+                            Saber más <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Service 2: Terapia de Pareja -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 group flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Terapia de Pareja</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Mejora la comunicación, resuelve conflictos y fortalece el vínculo afectivo con herramientas prácticas.</p>
+<a class="text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto" href="#">
+                            Saber más <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Service 3: Psiquiatría -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 group flex flex-col h-full">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Psiquiatría</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Evaluación médica integral y manejo farmacológico para trastornos del estado de ánimo, ansiedad y más.</p>
+<button class="w-full bg-surface-variant text-on-surface hover:bg-outline-variant py-2 rounded-lg font-body-md font-medium transition-colors mt-auto">Agendar Consulta</button>
+</div>
+<!-- Service 4: Neuropsicología (Spans 2 cols on md) -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 md:col-span-2 group flex flex-col md:flex-row items-center gap-6 h-full">
+<div class="w-full md:w-1/3 h-48 md:h-full rounded-lg overflow-hidden bg-surface-container">
+<img alt="Evaluación cognitiva" class="w-full h-full object-cover opacity-80" data-alt="Doctor discussing brain scans with patient in a modern clinical setting, soft blue and white lighting, professional focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhSUQxYSP1bXVnTBIEfFTCdgejqeQBSyK4-7rFrF9Qk3xMqqAso5E4SMJ3htCVj97Pu66Bu0tw_dzEpNMtq8xdguR_gCaKWQtOJw-Vov348obY6qqo7WX7rOCZuO25an5Oc02BvTIl8TfAZ2hgh7VIzLwqSOXBZzRyy9QFFLvZYnNSBujVx_yR1uAJM07L46FfXIlLXYoVcn19X-GBwK2SllHv6Ba2IAbLAwXeyWS5_wTki9MyvToDtHi7f4OQsuD_brfS3g1MtLg"/>
+</div>
+<div class="w-full md:w-2/3 flex flex-col flex-grow">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container mb-4">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Neuropsicología</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Evaluación detallada de las funciones cognitivas (memoria, atención, lenguaje) para diagnóstico y rehabilitación neuropsicológica.</p>
+<a class="text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto" href="#">
+                                Saber más <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 5 & 6 Stacked in last col -->
+<div class="flex flex-col gap-md h-full">
+<!-- Service 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 flex-1">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="family_restroom">family_restroom</span>
+</div>
+<h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Adolescentes</h3>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Acompañamiento especializado en los desafíos emocionales de la juventud.</p>
+<a class="text-primary-container text-sm font-medium hover:text-primary" href="#">Saber más</a>
+</div>
+<!-- Service 6 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 flex-1">
+<div class="flex items-center gap-4 mb-3">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<h3 class="font-headline-md text-[20px] font-semibold text-on-surface">Talleres</h3>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant mb-4">Sesiones grupales de psicoeducación para el manejo del estrés y la ansiedad.</p>
+<a class="text-primary-container text-sm font-medium hover:text-primary" href="#">Ver calendario</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-xl px-6 bg-surface-container-low border-y border-outline-variant/20">
+<div class="max-w-[1200px] mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12">Por qué elegir Psiquimed</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-3">Atención Personalizada</h3>
+<p class="font-body-md text-on-surface-variant text-center max-w-xs">Cada tratamiento se adapta a tu historia y necesidades específicas.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="lock">lock</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-3">Confidencialidad Absoluta</h3>
+<p class="font-body-md text-on-surface-variant text-center max-w-xs">Tu privacidad y la seguridad de tu información son nuestra prioridad.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container mb-6">
+<span class="material-symbols-outlined text-3xl" data-icon="verified">verified</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-3">Expertos Certificados</h3>
+<p class="font-body-md text-on-surface-variant text-center max-w-xs">Equipo médico de alto nivel con formación continua en salud mental.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar (WhatsApp Support FAB) -->
+<a aria-label="WhatsApp Support" class="fixed bottom-8 right-8 rounded-full w-16 h-16 flex items-center justify-center z-50 shadow-[0_10px_30px_rgba(57,20,148,0.12)] bg-emerald-500 dark:bg-emerald-600 text-white font-manrope font-bold hover:scale-110 hover:rotate-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="chat">chat</span>
+<span class="sr-only">WhatsApp Support</span>
+</a>
+<!-- Footer -->
+<footer class="bg-indigo-950 dark:bg-slate-950 w-full pt-16 pb-8 border-t border-indigo-900 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<span class="text-xl font-bold text-white mb-4 block font-manrope">Psiquimed</span>
+<p class="font-manrope text-sm leading-relaxed text-indigo-50 dark:text-slate-300">© 2024 Psiquimed. Guided Calm Mental Health Care.</p>
+</div>
+<div>
+<h4 class="text-white font-semibold mb-4 font-manrope">Legal</h4>
+<ul class="space-y-2">
+<li><a class="font-manrope text-sm leading-relaxed text-indigo-200/70 dark:text-slate-500 hover:text-white hover:translate-x-1 transition-transform duration-300 inline-block" href="#">Privacy Policy</a></li>
+<li><a class="font-manrope text-sm leading-relaxed text-indigo-200/70 dark:text-slate-500 hover:text-white hover:translate-x-1 transition-transform duration-300 inline-block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-semibold mb-4 font-manrope">Patients</h4>
+<ul class="space-y-2">
+<li><a class="font-manrope text-sm leading-relaxed text-indigo-200/70 dark:text-slate-500 hover:text-white hover:translate-x-1 transition-transform duration-300 inline-block" href="#">Patient Portal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-semibold mb-4 font-manrope">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-manrope text-sm leading-relaxed text-indigo-200/70 dark:text-slate-500 hover:text-white hover:translate-x-1 transition-transform duration-300 inline-block" href="#">Help Center</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

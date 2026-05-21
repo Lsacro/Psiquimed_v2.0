@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 export default function Footer() {
   return (
     <>
@@ -6,16 +8,37 @@ export default function Footer() {
           <div className='flex flex-col gap-sm'>
             <div className='text-xl font-black text-[#391494]  mb-xs'>Psiquimed</div>
             <p className='text-slate-500 '>© 2026 Psiquimed.&nbsp;Calma guiada para el bienestar mental</p>
-            <div className='flex gap-4 mt-4'>
-              <a aria-label='Facebook' className='text-[#391494] hover:text-[#D2A0DF]  transition-colors' href='#'>
-                <span className='material-symbols-outlined text-3xl!'>public</span>
-              </a>
-              <a aria-label='Instagram' className='text-[#391494] hover:text-[#D2A0DF]  transition-colors' href='#'>
-                <span className='material-symbols-outlined text-3xl!'>share</span>
-              </a>
-              <a aria-label='TikTok' className='text-[#391494] hover:text-[#D2A0DF]  transition-colors' href='#'>
-                <span className='material-symbols-outlined text-3xl!'>videocam</span>
-              </a>
+            <div className='flex gap-6 mt-4'>
+              <NavLink
+                className='text-[#391494]  hover:scale-110  transition-colors'
+                to='https://www.instagram.com/psiquimedec/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <svg className='w-10 h-10'>
+                  <use href='/sprite.svg#instagram' />
+                </svg>
+              </NavLink>
+              <NavLink
+                className='text-[#391494]  hover:scale-110  transition-colors'
+                to='https://www.tiktok.com/@tiktok'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <svg className='w-10 h-10'>
+                  <use href='/sprite.svg#tiktok' />
+                </svg>
+              </NavLink>
+              <NavLink
+                className='text-[#391494]  hover:scale-110  transition-colors'
+                to='https://www.facebook.com/psiquimed/?locale=es_LA'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <svg className='w-10 h-10'>
+                  <use href='/sprite.svg#facebook' />
+                </svg>
+              </NavLink>
             </div>
           </div>
           <div className='flex flex-col gap-sm'>

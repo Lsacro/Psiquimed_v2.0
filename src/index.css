@@ -86,7 +86,6 @@
 @utility label-caps {
   font-size: 12px;
   font-family: var(--font-label-caps);
-  line-height: 1;
   letter-spacing: 0.05em;
   font-weight: 600;
 }
