@@ -1,4 +1,4 @@
-export default function EducationCard({ src, alt, time, title, description }) {
+export default function EducationCardRigth({ src, alt, time, title, description }) {
   return (
     <>
       <div className='bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(57,20,148,0.05)] border border-outline-variant/30 flex flex-col md:flex-row'>

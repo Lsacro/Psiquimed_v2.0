@@ -59,13 +59,13 @@ export default function Footer() {
           <div className='flex flex-col gap-sm col-span-1 md:col-span-2'>
             <h4 className='font-headline-md text-headline-md text-[#391494] '>Ubicación</h4>
             <div className='w-full h-48 bg-surface-variant rounded-xl flex items-center justify-center overflow-hidden border border-outline-variant/30'>
-              <img
-                alt='Map placeholder showing city streets'
-                className='w-full h-full object-cover opacity-50 grayscale'
-                data-alt='Stylized map showing a minimal elegant street view with a subtle pin drop'
-                data-location='Ciudad de México'
-                src='https://lh3.googleusercontent.com/aida-public/AB6AXuCIDU6ik5RikERAtdo0X1OBvDIVscwtW_EyfpgQJVbZxwttdFv5OVepcL2YWw3bXWG9oN7HT-gc7a3X2PK9fYzhNEI5GNMvQnFf8nDxPfLp-_67Nc0tHFUA2ZozP41Sb8KvF0PYat9Qij4pj4lhbMqQ5SH-bVVJ5xDb03X1IhJ2leF6tJ4bYmHxjB611xnm3WdjMw_SnXVwRLAG_XsdSqnN8XQuCoY23s8xXY1OrHHuetPaYGPdxhUn6ikwHZDubC47S52vsrjjm5w'
-              />
+              <iframe
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7974143991983!2d-78.49268579999999!3d-0.1854796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d5a39e43cd75fd%3A0x8c4140fcdf6a0ce1!2sPSIQUIMED!5e0!3m2!1ses-419!2sec!4v1779983528198!5m2!1ses-419!2sec'
+                width='100%'
+                height='100%'
+                allowFullScreen=''
+                loading='lazy'
+              ></iframe>
             </div>
           </div>
         </div>

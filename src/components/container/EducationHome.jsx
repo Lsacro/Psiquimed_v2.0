@@ -1,4 +1,5 @@
-import EducationCard from '../cards/EducationCard';
+import EducationCardRigth from '../cards/EducationCardRigth';
+import { NavLink } from 'react-router-dom';
 
 const articles = [
   {
@@ -17,7 +18,7 @@ const articles = [
   },
 ];
 
-export default function EducationContainer() {
+export default function EducationHome() {
   return (
     <>
       <section className='py-xl bg-surface px-8'>
@@ -29,14 +30,17 @@ export default function EducationContainer() {
                 Recursos y conocimientos para empoderarte en la gestión diaria de tu salud mental.
               </p>
             </div>
-            <button className='text-primary-container font-label-caps label-caps flex items-center gap-xs mt-sm md:mt-0 hover:text-surface-tint cursor-pointer'>
+            <NavLink
+              className='text-primary-container font-label-caps label-caps flex items-center gap-xs mt-sm md:mt-0 hover:text-surface-tint cursor-pointer'
+              to='/education'
+            >
               Ver Todos
               <span className='material-symbols-outlined text-sm'>arrow_forward</span>
-            </button>
+            </NavLink>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-gutter'>
             {articles.map((article, index) => (
-              <EducationCard key={index} {...article} />
+              <EducationCardRigth key={index} {...article} />
             ))}
           </div>
         </div>

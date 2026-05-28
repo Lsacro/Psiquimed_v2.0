@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Psico-Educación | Psiquimed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#cac4d5",
+                        "primary": "#23006b",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#60366d",
+                        "surface": "#f9f9fb",
+                        "secondary-container": "#f0b4fe",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2f3132",
+                        "secondary-fixed": "#fad7ff",
+                        "tertiary-fixed-dim": "#e8b5f5",
+                        "tertiary-fixed": "#fad7ff",
+                        "on-surface-variant": "#484553",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ccbeff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f9f9fb",
+                        "on-secondary-fixed-variant": "#633372",
+                        "on-secondary-fixed": "#330143",
+                        "background": "#f9f9fb",
+                        "error": "#ba1a1a",
+                        "on-background": "#1a1c1d",
+                        "primary-fixed": "#e7deff",
+                        "surface-variant": "#e2e2e4",
+                        "surface-tint": "#6449c0",
+                        "surface-container-low": "#f3f3f5",
+                        "outline": "#797584",
+                        "on-surface": "#1a1c1d",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e2e2e4",
+                        "secondary": "#7d4b8c",
+                        "on-tertiary-fixed": "#30073e",
+                        "surface-dim": "#d9dadc",
+                        "primary-fixed-dim": "#ccbeff",
+                        "primary-container": "#391494",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e8e8ea",
+                        "on-primary-fixed": "#1e0060",
+                        "surface-container": "#edeef0",
+                        "on-tertiary-container": "#bd8cca",
+                        "inverse-on-surface": "#f0f0f2",
+                        "secondary-fixed-dim": "#edb2fb",
+                        "tertiary-container": "#4c245a",
+                        "on-secondary-container": "#724181",
+                        "on-primary-fixed-variant": "#4c2ea6",
+                        "on-primary-container": "#a48cff",
+                        "tertiary": "#340c43"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "container-max": "1200px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-xl": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .shadow-ambient-1 { box-shadow: 0 2px 4px rgba(57, 20, 148, 0.05); }
+        .shadow-ambient-2 { box-shadow: 0 4px 10px rgba(57, 20, 148, 0.08); }
+        .shadow-ambient-3 { box-shadow: 0 8px 30px rgba(57, 20, 148, 0.12); }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="bg-white/90 dark:bg-slate-950/90 backdrop-blur-md font-manrope antialiased docked full-width top-0 sticky z-50 border-b border-violet-100 dark:border-slate-800 shadow-sm shadow-violet-900/5">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="text-2xl font-bold tracking-tight text-violet-900 dark:text-violet-100">Psiquimed</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-slate-600 dark:text-slate-400 hover:text-violet-800 transition-colors hover:bg-violet-50 dark:hover:bg-slate-900 transition-all px-3 py-2 rounded-md" href="#">Inicio</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-violet-800 transition-colors hover:bg-violet-50 dark:hover:bg-slate-900 transition-all px-3 py-2 rounded-md" href="#">Profesionales</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-violet-800 transition-colors hover:bg-violet-50 dark:hover:bg-slate-900 transition-all px-3 py-2 rounded-md" href="#">Servicios</a>
+<a class="text-violet-900 dark:text-violet-300 border-b-2 border-violet-900 dark:border-violet-400 pb-1 font-semibold px-3 py-2 hover:bg-violet-50 dark:hover:bg-slate-900 transition-all scale-95 duration-150" href="#">Educación</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-violet-800 transition-colors hover:bg-violet-50 dark:hover:bg-slate-900 transition-all px-3 py-2 rounded-md" href="#">Contacto</a>
+</nav>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity hidden md:block">Reserva Ahora</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative pt-xl pb-lg px-6 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero background" class="w-full h-full object-cover opacity-20" data-alt="Serene landscape with soft morning light, calm water and gentle mountains in background, creating a peaceful and thoughtful atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMF_tn_o1elPB84cebvRlYwsToSae7lZgMnNDQQ8ywsxtj611EPIwuJ7nAmf9j96E5d1d0d2r6iCPvW4z0HH3JMpEN3aLyvXMjcQl2aQulNmCzSaH8r9xa8irQTfMnqkgSOKODS4ua-S2qUQRkBEGYQZ0aCrKG3ImzAlQwtGmM05vu7DkQ5Ca62u6cuEoXSSTcjjYAhCuGrwDqN3HP4-5VFHbYATlxB0pgTUsGT-XJERIkfai8KLju92a0wm7xR6Pv_dkZDG8-doA"/>
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-lowest/80 to-background"></div>
+</div>
+<div class="max-w-container-max mx-auto relative z-10 text-center">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-sm">Psico-Educación</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Comprender la mente es el primer paso hacia el bienestar. Explora nuestros recursos educativos diseñados para brindarte claridad, herramientas prácticas y un mayor entendimiento de tu salud mental.</p>
+</div>
+</section>
+<!-- Filters -->
+<section class="max-w-container-max mx-auto px-6 mb-lg">
+<div class="flex flex-wrap gap-sm justify-center">
+<button class="px-6 py-2 rounded-full bg-primary-container text-on-primary font-medium text-sm shadow-ambient-1">Todos</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-medium text-sm hover:bg-surface-variant transition-colors">Ansiedad</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-medium text-sm hover:bg-surface-variant transition-colors">Depresión</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-medium text-sm hover:bg-surface-variant transition-colors">Bienestar</button>
+<button class="px-6 py-2 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant font-medium text-sm hover:bg-surface-variant transition-colors">Familia</button>
+</div>
+</section>
+<!-- Articles Grid -->
+<section class="max-w-container-max mx-auto px-6 pb-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Article Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-ambient-1 hover:shadow-ambient-2 transition-shadow duration-300 flex flex-col">
+<div class="aspect-[16/9] relative overflow-hidden">
+<img alt="Manejo de ansiedad" class="w-full h-full object-cover" data-alt="Person sitting peacefully by a window looking out at nature, soft natural lighting, evoking calm and mindfulness" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVv_PJ59oqU3IRVfo8_SrvYgoR4Y6w3PjFFIohL_6GhVXwFkv5A1VVQAKY0FD7cO_ySJNqeFjV8KrVSnvGoHo7IC3kMjH2l6Xf9W1CtKOsf24n2iruV_hZ-IzJPnrNfNVcK5I4ePGOxLqak-6lZK0pLgkUXWHqM0lFxFwSI5y6ukXyDlwZRNPy6m77JWh1jcDYgyZy_V4XHyL4Ncdg4MeC84FWU3hmuxe8tniBzqYqkCJObhwNEdCVPUfi8Cgj3hJAc1KxR5Eu51c"/>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<div class="flex items-center gap-xs mb-sm text-secondary">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-caps text-label-caps">5 MIN LECTURA</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Cómo manejar la ansiedad diaria</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Estrategias prácticas y basadas en evidencia para regular el sistema nervioso y recuperar el centro en momentos de estrés cotidiano.</p>
+<a class="inline-flex items-center gap-xs text-primary font-medium hover:text-on-primary-fixed-variant transition-colors mt-auto" href="#">
+                            Leer más <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-ambient-1 hover:shadow-ambient-2 transition-shadow duration-300 flex flex-col">
+<div class="aspect-[16/9] relative overflow-hidden">
+<img alt="Importancia del sueño" class="w-full h-full object-cover" data-alt="Cozy bedroom setting with soft, warm lighting and comfortable linens, evoking restful sleep and tranquility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU5Okmd4BjolTP2XqyjnrRVSi_Q-nzMiy7CASqC06LuSOTDahm3AG3doKDGO0T44LbIAzW5RIlZ1iaYWHQ5r4NqD9nEB0OCWhCWvT_M2sEAX7zGqaBmfeLXkFGGenKCEXaZ75ThuFjqSL-IGIAwzgr7xj7SLsN3vftZLqViNNRzdKLGe0R4jGm3kwaj_Zbz8P0ckB3Ticzi61pR0qMDM8K3U7MVN4rUnUwaB8Qt32HMQL5Pls0gRTLVS-Bv1Nvd8EBwO9TlLOLWds"/>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<div class="flex items-center gap-xs mb-sm text-secondary">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-caps text-label-caps">8 MIN LECTURA</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">La importancia del sueño en la salud mental</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Descubre cómo el descanso nocturno profundo es fundamental para la regulación emocional y la consolidación de la memoria.</p>
+<a class="inline-flex items-center gap-xs text-primary font-medium hover:text-on-primary-fixed-variant transition-colors mt-auto" href="#">
+                            Leer más <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-ambient-1 hover:shadow-ambient-2 transition-shadow duration-300 flex flex-col">
+<div class="aspect-[16/9] relative overflow-hidden">
+<img alt="Comunicación familiar" class="w-full h-full object-cover" data-alt="Family sitting together in a bright, modern living room, engaged in warm conversation, expressing connection and support" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5T3euONryo1G0wwS3YOg18VVPCdQ5lzMVI3FdmFGkCkcNLpoQWz9dm_wVFbCy5yKVwjpwg0VD-yFOCseD7WXYcx9k88Iw87_EpTh17nINdBK6zG-TWAWhxVCl1czRxqxFg_7p2YGsVAGNXd6T7CgK0i3HcslL82npcox7rUENL_5ijjibWs0be-1uiDNxAx-bb5Wv6u4wQ_O-2JKCOSQZmfo7b_F6vWJO8VTS45AReQBw7kEV5zD_cZEGUhF2UhLmFhqy7bJdRf4"/>
+</div>
+<div class="p-md flex-grow flex flex-col">
+<div class="flex items-center gap-xs mb-sm text-secondary">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="font-label-caps text-label-caps">6 MIN LECTURA</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Comunicación asertiva en familia</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Herramientas para establecer límites sanos y expresar necesidades de manera clara y empática dentro del núcleo familiar.</p>
+<a class="inline-flex items-center gap-xs text-primary font-medium hover:text-on-primary-fixed-variant transition-colors mt-auto" href="#">
+                            Leer más <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="max-w-container-max mx-auto px-6 pb-xl">
+<div class="bg-primary-fixed/30 rounded-xl p-lg flex flex-col md:flex-row items-center gap-gutter border border-primary-fixed">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-3xl">info</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-xs">Aviso Importante</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">La información proporcionada en esta sección tiene un propósito puramente educativo y no pretende diagnosticar, tratar, curar o prevenir ninguna enfermedad. Estos artículos <strong>no reemplazan la evaluación, diagnóstico o tratamiento de un profesional de la salud mental calificado</strong>. Si estás experimentando una crisis, por favor contacta a emergencias inmediatamente.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB WhatsApp -->
+<a class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-lg shadow-ambient-3 flex items-center justify-center text-white hover:opacity-90 transition-opacity z-50" href="#">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path>
+</svg>
+</a>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 font-manrope text-sm full-width py-12 px-6 border-t border-slate-200 dark:border-slate-800 flat no shadows">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-violet-900 dark:text-violet-100 mb-4">Psiquimed</div>
+<p class="text-slate-500 dark:text-slate-400 mb-4">© 2024 Psiquimed Centro de Salud Mental. Todos los derechos reservados.</p>
+<div class="flex gap-4">
+<a class="text-secondary hover:text-violet-600 dark:hover:text-violet-300 transition-colors" href="#">Facebook Profile</a>
+<a class="text-secondary hover:text-violet-600 dark:hover:text-violet-300 transition-colors" href="#">Instagram Profile</a>
+<a class="text-secondary hover:text-violet-600 dark:hover:text-violet-300 transition-colors" href="#">TikTok Profile</a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-1">
+<h5 class="font-bold text-violet-900 mb-4">Información</h5>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-300" href="#">Horarios de Atención</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-300" href="#">Políticas de Privacidad</a></li>
+</ul>
+</div>
+<div class="col-span-1 md:col-span-2">
+<h5 class="font-bold text-violet-900 mb-4">Ubicación</h5>
+<div class="w-full h-32 bg-surface-container rounded-lg overflow-hidden relative">
+<img alt="Mapa de ubicación" class="w-full h-full object-cover opacity-80" data-alt="Abstract minimalist map view with soft subtle purple and grey tones, clean cartography style" data-location="Ciudad" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO_50UGfRqroJlMQCyKhisExOwvQ5tG2AlRqbx5oZ5AFR__DJDEoOTmn_1WhYI-2uvy_zw8svsKXQzSUmSaelP9-n3Oe0GCJsPRo_HjzYi7r0Sn_xbjTZEPs-TReDgTha3y3SfRX12bZrU5kXKCHiJ_TlZEt9d_ek8hjJPF-40t4Et0QOH-7PftsOEpLWk0CPt4NmhpYkuzB5JZ5pioViFHEGa8LjS_HrUMxNZpJqnm-ruNJbkdhGI1UU-fDfkmnYlYGM4Y9o7wCg"/>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

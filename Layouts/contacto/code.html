@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto - Psiquimed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e2e2e4",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#484553",
+                        "primary-container": "#391494",
+                        "primary-fixed-dim": "#ccbeff",
+                        "surface-container": "#edeef0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#fad7ff",
+                        "tertiary-container": "#4c245a",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#340c43",
+                        "secondary-container": "#f0b4fe",
+                        "surface-dim": "#d9dadc",
+                        "surface-variant": "#e2e2e4",
+                        "surface-tint": "#6449c0",
+                        "surface": "#f9f9fb",
+                        "surface-container-low": "#f3f3f5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#4c2ea6",
+                        "on-tertiary-fixed": "#30073e",
+                        "surface-bright": "#f9f9fb",
+                        "outline-variant": "#cac4d5",
+                        "secondary": "#7d4b8c",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3132",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#fad7ff",
+                        "on-tertiary-container": "#bd8cca",
+                        "background": "#f9f9fb",
+                        "on-tertiary-fixed-variant": "#60366d",
+                        "secondary-fixed-dim": "#edb2fb",
+                        "outline": "#797584",
+                        "inverse-primary": "#ccbeff",
+                        "on-secondary-fixed": "#330143",
+                        "surface-container-high": "#e8e8ea",
+                        "on-primary-container": "#a48cff",
+                        "on-surface": "#1a1c1d",
+                        "on-secondary-fixed-variant": "#633372",
+                        "primary": "#23006b",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#e8b5f5",
+                        "on-background": "#1a1c1d",
+                        "on-secondary-container": "#724181",
+                        "primary-fixed": "#e7deff",
+                        "on-primary-fixed": "#1e0060",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f0f2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-xl": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .indigo-shadow-1 {
+            box-shadow: 0 2px 4px rgba(57, 20, 148, 0.05);
+        }
+        .indigo-shadow-2 {
+            box-shadow: 0 4px 10px rgba(57, 20, 148, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-indigo-900 dark:text-indigo-300 font-manrope antialiased w-full top-0 sticky z-50 border-b border-indigo-50 dark:border-slate-800 shadow-sm">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="text-2xl font-extrabold tracking-tight text-indigo-900 dark:text-indigo-100">
+                Psiquimed
+            </div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors duration-200" href="#">Inicio</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors duration-200" href="#">Especialidades</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors duration-200" href="#">Equipo</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors duration-200" href="#">Blog</a>
+<a class="text-indigo-900 dark:text-indigo-300 font-bold border-b-2 border-indigo-900 dark:border-indigo-300 pb-1 hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors duration-200 opacity-80 scale-95 transition-all" href="#">Contacto</a>
+</div>
+<button class="bg-primary-container text-on-primary hover:bg-primary transition-colors px-6 py-2 rounded-lg font-body-md shadow-sm">
+                Agendar Cita
+            </button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative py-xl px-6 bg-surface-container-lowest border-b border-surface-variant">
+<div class="max-w-container-max mx-auto text-center">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-md">Contacto</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Estamos aquí para escucharte. Comunícate con nosotros para agendar una cita o resolver cualquier duda sobre nuestros servicios.
+                </p>
+</div>
+</section>
+<!-- Contact Grid -->
+<section class="py-xl px-6 max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Contact Info & Hours (Left Column) -->
+<div class="lg:col-span-5 space-y-lg">
+<!-- Info Card -->
+<div class="bg-surface-container-lowest rounded-xl p-lg indigo-shadow-1 border border-surface-variant">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-lg">Información</h2>
+<div class="space-y-md">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-[24px]">location_on</span>
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-xs uppercase">Dirección</p>
+<p class="font-body-md text-body-md text-on-surface">Av. de la Paz 1234, Col. Centro<br/>Ciudad Médica, CP 45000</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-[24px]">call</span>
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-xs uppercase">Teléfono</p>
+<p class="font-body-md text-body-md text-on-surface">+52 (55) 1234-5678</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary text-[24px]">mail</span>
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-xs uppercase">Correo Electrónico</p>
+<p class="font-body-md text-body-md text-on-surface">hola@psiquimed.com</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Hours Card -->
+<div class="bg-surface-container-low rounded-xl p-lg indigo-shadow-1 border border-surface-variant">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Horarios de Atención</h2>
+<ul class="space-y-sm font-body-md text-body-md text-on-surface-variant">
+<li class="flex justify-between border-b border-surface-variant pb-xs">
+<span>Lunes - Viernes</span>
+<span class="font-semibold">09:00 - 20:00</span>
+</li>
+<li class="flex justify-between border-b border-surface-variant pb-xs">
+<span>Sábados</span>
+<span class="font-semibold">10:00 - 14:00</span>
+</li>
+<li class="flex justify-between text-outline">
+<span>Domingos</span>
+<span>Cerrado</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Contact Form (Right Column) -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest rounded-xl p-lg indigo-shadow-2 border border-surface-variant">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-lg">Envíanos un Mensaje</h2>
+<form class="space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Nombre Completo</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-primary-container focus:ring focus:ring-primary-container/20 font-body-md text-body-md px-4 py-3 transition-colors" placeholder="Tu nombre" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Correo Electrónico</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-primary-container focus:ring focus:ring-primary-container/20 font-body-md text-body-md px-4 py-3 transition-colors" placeholder="tu@email.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Asunto</label>
+<input class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-primary-container focus:ring focus:ring-primary-container/20 font-body-md text-body-md px-4 py-3 transition-colors" placeholder="¿En qué podemos ayudarte?" type="text"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Mensaje</label>
+<textarea class="w-full rounded-lg border-outline-variant bg-surface-bright focus:border-primary-container focus:ring focus:ring-primary-container/20 font-body-md text-body-md px-4 py-3 transition-colors resize-none" placeholder="Escribe tu mensaje aquí..." rows="5"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-headline-md text-[18px] py-4 rounded-lg hover:bg-primary transition-colors indigo-shadow-2 flex justify-center items-center gap-2" type="button">
+<span>Enviar Mensaje</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="pb-xl px-6 max-w-container-max mx-auto">
+<div class="rounded-xl overflow-hidden indigo-shadow-1 h-[400px] relative bg-surface-variant border border-outline-variant">
+<!-- Fallback map styling if actual iframe isn't rendering in preview, represented by a div here -->
+<div class="absolute inset-0 flex items-center justify-center bg-surface-container text-outline font-body-lg">
+<span class="material-symbols-outlined text-[48px] mb-2 block text-center">map</span>
+                    [Mapa de Google Maps - Ciudad Médica]
+                </div>
+<img alt="Map placeholder" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-multiply" data-alt="minimalist street map view with soft subtle colors in light mode showing city grid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLlUPtXLFUT3bnMFgKdHCCWdzSYXKhFxImY74j-BxPztOWwxqCQsXvFj5aPvE_aPPfkZUOGJ9kL9GkUvhXp-vN3ng5pOpAOvFp_ltAILhG98u_STbr2sN69hyYXQNIA8wxYMWTpwqNQcCJBbngAcT7nEzF-l6uahdAxY7Zqu53LLaHPEXWSFDCRNt2FK3gHA9o0oK1G3lxtVsLbFqIccUXylBROGIWWhNw7bMnScCpLT70SWcA33-uH7NIyOJFea8drx7tBjhYq8"/>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 text-indigo-900 dark:text-indigo-300 font-manrope text-sm w-full py-12 border-t border-indigo-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="flex flex-col gap-4">
+<span class="text-lg font-bold text-indigo-900 dark:text-indigo-100">Psiquimed</span>
+<span class="text-slate-500 dark:text-slate-400">© 2024 Psiquimed. Cuidado mental con empatía y sabiduría.</span>
+</div>
+<div class="flex flex-col md:items-end gap-6">
+<div class="flex space-x-6">
+<a class="text-secondary hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">public</span>
+<span class="hidden">Facebook</span>
+</a>
+<a class="text-secondary hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+<span class="hidden">Instagram</span>
+</a>
+<a class="text-secondary hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="hidden">TikTok</span>
+</a>
+</div>
+<div class="flex space-x-4">
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Privacidad</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Términos</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp FAB -->
+<a class="fixed bottom-8 right-8 z-50 bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+</body></html>
