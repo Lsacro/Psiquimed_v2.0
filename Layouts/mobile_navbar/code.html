@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Psiquimed - Navigation Drawer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;900&amp;family=Inter:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#a48cff",
+                        "surface-bright": "#f9f9fb",
+                        "on-secondary-fixed": "#330143",
+                        "primary": "#23006b",
+                        "on-tertiary-fixed": "#30073e",
+                        "surface-container-highest": "#e2e2e4",
+                        "on-secondary-container": "#724181",
+                        "inverse-on-surface": "#f0f0f2",
+                        "secondary-fixed": "#fad7ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#4c2ea6",
+                        "on-tertiary-fixed-variant": "#60366d",
+                        "on-primary-fixed": "#1e0060",
+                        "error-container": "#ffdad6",
+                        "outline": "#797584",
+                        "on-surface": "#1a1c1d",
+                        "surface-variant": "#e2e2e4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#fad7ff",
+                        "primary-fixed": "#e7deff",
+                        "surface-tint": "#6449c0",
+                        "surface": "#f9f9fb",
+                        "background": "#f9f9fb",
+                        "on-secondary-fixed-variant": "#633372",
+                        "tertiary-fixed-dim": "#e8b5f5",
+                        "secondary": "#7d4b8c",
+                        "secondary-container": "#f0b4fe",
+                        "on-surface-variant": "#484553",
+                        "tertiary-container": "#4c245a",
+                        "surface-dim": "#d9dadc",
+                        "on-background": "#1a1c1d",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ccbeff",
+                        "surface-container-low": "#f3f3f5",
+                        "inverse-surface": "#2f3132",
+                        "surface-container-high": "#e8e8ea",
+                        "on-tertiary-container": "#bd8cca",
+                        "tertiary": "#340c43",
+                        "outline-variant": "#cac4d5",
+                        "primary-container": "#391494",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#edb2fb",
+                        "primary-fixed-dim": "#ccbeff",
+                        "surface-container": "#edeef0",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "container-max": "1200px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background font-body-md text-body-md text-on-background antialiased h-screen w-full relative overflow-hidden">
+<!-- Mock Background Content (to show dimming effect) -->
+<div class="absolute inset-0 z-0 opacity-50 p-6 pt-24">
+<h1 class="font-headline-lg text-headline-lg text-primary-container mb-4">Bienvenido a Psiquimed</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Tu espacio seguro para la salud mental.</p>
+<div class="h-40 bg-surface-container rounded-xl mb-4"></div>
+<div class="h-40 bg-surface-container rounded-xl"></div>
+</div>
+<!-- TopAppBar Mock (Behind overlay) -->
+<header class="fixed top-0 left-0 w-full z-10 flex items-center justify-between px-4 h-16 bg-white dark:bg-slate-900 border-b border-purple-50 dark:border-slate-800 shadow-sm shadow-purple-900/5">
+<button class="text-[#391494] dark:text-purple-400 p-2" id="menu-open-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-xl font-bold text-[#391494] dark:text-purple-300 tracking-tight font-headline-md">Psiquimed</span>
+<button class="font-manrope text-sm font-semibold tracking-tight text-[#391494] dark:text-purple-400">Reservar</button>
+</header>
+<!-- Overlay / Dimmed Background -->
+<div class="fixed inset-0 bg-black/40 z-[50] backdrop-blur-sm transition-opacity hidden" id="nav-overlay"></div>
+<!-- Navigation Drawer -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col p-4 bg-white dark:bg-slate-950 h-full w-[280px] rounded-r-lg divide-y divide-purple-50 dark:divide-slate-800 shadow-2xl shadow-purple-900/20 font-manrope text-base duration-300 ease-in-out -translate-x-full transition-transform" id="nav-drawer">
+<!-- Header -->
+<div class="pb-6 pt-4 px-2 flex justify-between items-center">
+<span class="text-2xl font-black text-[#391494] dark:text-purple-300 font-headline-md tracking-tight">Psiquimed</span>
+<button class="text-on-surface-variant hover:bg-purple-50 p-2 rounded-full transition-colors" id="menu-close-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 py-6 flex flex-col gap-2">
+<!-- Active State: Inicio -->
+<a class="flex items-center gap-4 bg-purple-50 dark:bg-purple-900/20 text-[#391494] dark:text-purple-200 font-bold rounded-lg px-4 py-3 hover:bg-purple-50 dark:hover:bg-slate-800 transition-all nav-link" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-body-md">Inicio</span>
+</a>
+<!-- Inactive State: Especialidades -->
+<a class="flex items-center gap-4 text-slate-700 dark:text-slate-300 px-4 py-3 rounded-lg hover:bg-purple-50 dark:hover:bg-slate-800 transition-all nav-link" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-body-md">Especialidades</span>
+</a>
+<!-- Inactive State: Psico-Educación -->
+<a class="flex items-center gap-4 text-slate-700 dark:text-slate-300 px-4 py-3 rounded-lg hover:bg-purple-50 dark:hover:bg-slate-800 transition-all nav-link" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-body-md">Psico-Educación</span>
+</a>
+<!-- Inactive State: Sobre Nosotros -->
+<a class="flex items-center gap-4 text-slate-700 dark:text-slate-300 px-4 py-3 rounded-lg hover:bg-purple-50 dark:hover:bg-slate-800 transition-all nav-link" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-body-md">Sobre Nosotros</span>
+</a>
+<!-- Inactive State: Contacto -->
+<a class="flex items-center gap-4 text-slate-700 dark:text-slate-300 px-4 py-3 rounded-lg hover:bg-purple-50 dark:hover:bg-slate-800 transition-all nav-link" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-body-md">Contacto</span>
+</a>
+</nav>
+<!-- Bottom Action -->
+<div class="pt-6 pb-4">
+<a class="flex items-center justify-center gap-2 w-full bg-primary-container text-on-primary rounded-lg px-4 py-4 font-headline-md text-[16px] hover:bg-on-primary-fixed-variant transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined">event_available</span>
+<span>Reservar Cita</span>
+</a>
+</div>
+</aside>
+<script>
+    const drawer = document.getElementById('nav-drawer');
+    const overlay = document.getElementById('nav-overlay');
+    const openBtn = document.getElementById('menu-open-btn');
+    const closeBtn = document.getElementById('menu-close-btn');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function openMenu() {
+        drawer.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        drawer.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+</script></body></html>

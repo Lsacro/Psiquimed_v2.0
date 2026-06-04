@@ -1,0 +1,326 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Psiquimed CMS - Manage Articles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f9f9fb",
+                        "inverse-primary": "#ccbeff",
+                        "surface-container-highest": "#e2e2e4",
+                        "tertiary": "#340c43",
+                        "surface-container-low": "#f3f3f5",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#fad7ff",
+                        "secondary-fixed-dim": "#edb2fb",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2f3132",
+                        "secondary": "#7d4b8c",
+                        "on-secondary-fixed": "#330143",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#f0b4fe",
+                        "primary": "#23006b",
+                        "on-primary-fixed-variant": "#4c2ea6",
+                        "primary-container": "#391494",
+                        "inverse-on-surface": "#f0f0f2",
+                        "on-tertiary-fixed": "#30073e",
+                        "surface": "#f9f9fb",
+                        "on-secondary-fixed-variant": "#633372",
+                        "on-primary-container": "#a48cff",
+                        "surface-tint": "#6449c0",
+                        "on-secondary-container": "#724181",
+                        "on-background": "#1a1c1d",
+                        "primary-fixed-dim": "#ccbeff",
+                        "surface-bright": "#f9f9fb",
+                        "primary-fixed": "#e7deff",
+                        "on-surface-variant": "#484553",
+                        "on-primary-fixed": "#1e0060",
+                        "surface-variant": "#e2e2e4",
+                        "surface-dim": "#d9dadc",
+                        "surface-container": "#edeef0",
+                        "outline": "#797584",
+                        "on-surface": "#1a1c1d",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#e8b5f5",
+                        "tertiary-container": "#4c245a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#cac4d5",
+                        "on-tertiary-fixed-variant": "#60366d",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#fad7ff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e8e8ea",
+                        "on-tertiary-container": "#bd8cca"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "container-max": "1200px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Manrope"],
+                        "headline-xl": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex font-body-md text-body-md antialiased">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full py-6 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 z-40">
+<!-- Header -->
+<div class="px-6 mb-lg">
+<div class="flex items-center gap-sm mb-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold">P</div>
+<h1 class="text-lg font-extrabold text-violet-950 dark:text-white font-headline-md tracking-tight">Psiquimed CMS</h1>
+</div>
+<p class="text-slate-500 font-label-caps text-label-caps">Clinical Admin Portal</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 px-4 space-y-1 font-manrope text-sm">
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-violet-800 dark:hover:text-violet-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-violet-800 dark:hover:text-violet-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">medical_services</span>
+<span>Doctors</span>
+</a>
+<!-- Active Tab: Articles -->
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-violet-950 dark:text-white bg-violet-50 dark:bg-violet-900/30 font-semibold border-r-4 border-violet-950 dark:border-violet-400 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined material-symbols-fill text-[20px]">article</span>
+<span>Articles</span>
+</a>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-violet-800 dark:hover:text-violet-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">medical_information</span>
+<span>Services</span>
+</a>
+<a class="flex items-center gap-sm px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-violet-800 dark:hover:text-violet-200 hover:bg-slate-50 dark:hover:bg-slate-800/50 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+<span>Contact Info</span>
+</a>
+</nav>
+<!-- CTA & Footer -->
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full flex items-center justify-center gap-sm py-2 px-4 rounded-lg bg-primary-container text-on-primary-container font-headline-md text-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Entry
+            </button>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-sm px-4 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-violet-800 dark:hover:text-violet-200 hover:bg-slate-50 duration-200 ease-in-out font-manrope text-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 md:ml-64">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-6 py-3 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-[0_2px_4px_rgba(57,20,148,0.05)] h-[72px]">
+<div class="flex items-center md:hidden">
+<h1 class="text-xl font-bold text-violet-950 dark:text-white font-headline-md">Psiquimed CMS</h1>
+</div>
+<!-- Search (Left aligned on desktop as per JSON) -->
+<div class="hidden md:flex items-center flex-1 max-w-md relative">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all font-body-md text-sm" placeholder="Search across CMS..." type="text">
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-sm ml-auto">
+<button class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 transition-transform relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-white"></span>
+</button>
+<button class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-9 h-9 rounded-full bg-surface-container-high ml-2 border border-outline-variant overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Administrator profile photo" class="w-full h-full object-cover" data-alt="professional portrait of an administrator in a clinical setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAaaGnbvUdT_mPsGoDosV5MIz4RLdr3Jv6r4FnV0fCCUhbWFAUNRv_CQKwaYlMbhyJDeS10uiUww3A6vsNe9iI-m_RF99_Og2LoUov-IB1Wl-bknZrlk2oHk_ryUvnn8WHA-c10B2oI4SDwgWqgrCoNNfM6W0SphfCHSw7_QdEDCh-ERoiv6mEsi7GYsUqsA84_ll7IygfKlsR6nPsUa1n0XKOZVVX9FO_Y8uflnQmmcjHmsy7FuxpHDSPWtG5z6WNzV91hONzM1M">
+</div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="flex-1 overflow-auto p-md md:p-lg">
+<!-- Page Header -->
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">Manage Articles</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Create, edit, and organize educational mental health content.</p>
+</div>
+<button class="flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary-container text-on-primary-container font-headline-md text-[16px] hover:shadow-md transition-all active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-[20px]">edit_document</span>
+                        Create New Article
+                    </button>
+</div>
+<!-- Filters & Controls -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-md bg-surface-container-lowest p-2 rounded-xl border border-outline-variant/30 shadow-[0_2px_4px_rgba(57,20,148,0.02)]">
+<div class="flex space-x-1 w-full sm:w-auto">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-headline-md text-sm transition-colors flex-1 sm:flex-none">All (24)</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-headline-md text-sm transition-colors flex-1 sm:flex-none">Published</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-headline-md text-sm transition-colors flex-1 sm:flex-none">Drafts</button>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[20px]">filter_list</span>
+<select class="w-full pl-10 pr-8 py-2 rounded-lg border-none bg-surface text-on-surface focus:ring-2 focus:ring-primary-container/20 font-body-md text-sm appearance-none cursor-pointer">
+<option>Sort by: Newest</option>
+<option>Sort by: Oldest</option>
+<option>Sort by: Title A-Z</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Articles Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Article Card 1 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-[0_2px_4px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_15px_rgba(57,20,148,0.08)] transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<img alt="Person practicing mindfulness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="woman sitting by a sunny window practicing mindfulness meditation with soft warm morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1dztG9nmtpTPFybYRn_zk049WSvLQA9WLCuvNteic_V2NCAmuEl-NLoyUEnAhARe1kn2OJsYCJFvKRPE11pjS3ObnQeIJcpGj3KiafGf_ONI-7fXNcwJ6R9ojss5zeTU4B4ODnDCFtqi-GgpUHmrSP8E3bs7uC6uxl-m29hprocE3NB6koaZa_EwN4tT7XAZD-TXVb-7HPrTQ0g5MouGb6NFEKdH-aFUFCHwGtP9PVFSEauffqc444NnVJRbLtG-EzGFwF5zngjI">
+<div class="absolute top-3 right-3 px-2 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant/50 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-[10px] text-on-surface">Published</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<span class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Mindfulness • 5 min read</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3 line-clamp-2 leading-tight">The Role of Mindfulness in Managing Daily Anxiety</h3>
+<div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-body-md text-sm text-on-surface-variant">Last edited: Today</span>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-outline hover:text-primary-container hover:bg-primary-fixed transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container/50 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 2 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-[0_2px_4px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_15px_rgba(57,20,148,0.08)] transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<img alt="Therapy session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="professional therapist talking with a client in a comfortable brightly lit modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZq7lo94cxsf6iV_AL2nuMl1KsXsvpTYbkIcj9s5iifWITqlx8jfIHIzs51StUjWxShPlCDq_0pOn93EaOBNxJcPbsxaM8DfUdybhL52G4_jtP48kYTd0CS8xkUR7Ii0VPCOqeB4gfNsUCB2gz3gviJG7Y9NAXhMahkxNzwV77yk5FVSaf30KS5KouAAdsmUat7PbjLfwtFdKzHl4M8B78h19ryHKbKqrRZMrcTRvjEmM3IEkr_41Vy_lz2OdykBUJhYePmMAyujc">
+<div class="absolute top-3 right-3 px-2 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant/50 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-[10px] text-on-surface">Published</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<span class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Therapy Options • 8 min read</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3 line-clamp-2 leading-tight">Understanding Cognitive Behavioral Therapy (CBT)</h3>
+<div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-body-md text-sm text-on-surface-variant">Last edited: Oct 12</span>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-outline hover:text-primary-container hover:bg-primary-fixed transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container/50 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 3 (Draft) -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-[0_2px_4px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_15px_rgba(57,20,148,0.08)] transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<div class="w-full h-full bg-surface-container-high flex flex-col items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[48px] mb-2 opacity-50">image</span>
+<span class="font-body-md text-sm opacity-50">No Cover Image</span>
+</div>
+<div class="absolute top-3 right-3 px-2 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant/50 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-caps text-[10px] text-on-surface">Draft</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1 bg-surface-bright/50">
+<span class="font-label-caps text-label-caps text-outline mb-2 uppercase tracking-widest">Uncategorized • -- min read</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3 line-clamp-2 leading-tight italic text-on-surface-variant">Seasonal Affective Disorder: Symptoms and Coping</h3>
+<div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-body-md text-sm text-on-surface-variant">Last edited: Oct 10</span>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-outline hover:text-primary-container hover:bg-primary-fixed transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container/50 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 4 -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 shadow-[0_2px_4px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_15px_rgba(57,20,148,0.08)] transition-all duration-300">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<img alt="Person journaling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="hands writing in a minimal leather journal on a clean white desk next to a cup of tea" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcAd4xCvhpQ4NbkfWYUWNY4JGNXMIQdi32OsQCSF2jjh911JPpBQ33IUH4imKZ5K0XhvjCG6OeQ89fS9leXNncfG6YZMKx1AcKW6Rm3Y6-qGkeFXquLsrGtc0e5KKD3SFMduTonozK_3eYZiZoPwjpVoF0Qb0tk785IuUMy5iiLS04a2XO94Gp8Rr3sQ8DLlNnwLnjG4OLrAJBg5BRsKG3KMaXzrYJivzcNxmRVp9_bjK-5M_iovBt7Uyp8Kj2sP70mk3d3VMAvhc">
+<div class="absolute top-3 right-3 px-2 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant/50 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-[10px] text-on-surface">Published</span>
+</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<span class="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Self Care • 4 min read</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-3 line-clamp-2 leading-tight">The Benefits of Expressive Writing for Trauma Recovery</h3>
+<div class="mt-auto pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+<span class="font-body-md text-sm text-on-surface-variant">Last edited: Sep 28</span>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-outline hover:text-primary-container hover:bg-primary-fixed transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-outline hover:text-error hover:bg-error-container/50 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

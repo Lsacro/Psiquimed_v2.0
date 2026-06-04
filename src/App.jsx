@@ -12,7 +12,7 @@ import Education from './pages/Education';
 import ScrollToTop from './components/common/ScrollToTop';
 import Article from './pages/Article';
 import DashboradLayout from './layouts/DashboardLayout';
-import DashNavbar from './components/common/DashNavbar';
+import MainDashboard from './pages/MainDashboard';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
         </Route>
         <Route element={<DashboradLayout />}>
-          <Route path='/dashboard' element={<DashNavbar />} />
+          <Route path='/dashboard' element={<MainDashboard />} />
         </Route>
       </Routes>
     </>
