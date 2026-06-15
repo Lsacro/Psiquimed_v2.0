@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function ServiceHome() {
   return (
     <>
@@ -20,12 +22,12 @@ export default function ServiceHome() {
               <p className='font-body-md text-body-md text-on-surface-variant mb-6 flex-grow'>
                 Un espacio seguro para explorar tus emociones, gestionar la ansiedad y trabajar en tu crecimiento personal.
               </p>
-              <a className='text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto' href='#'>
+              <Link to='/services' className='text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto'>
                 Saber más{' '}
                 <span className='material-symbols-outlined ml-1 text-sm' data-icon='arrow_forward'>
                   arrow_forward
                 </span>
-              </a>
+              </Link>
             </div>
             <div className='bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 group flex flex-col h-full'>
               <div className='w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-on-secondary transition-colors'>
@@ -37,12 +39,12 @@ export default function ServiceHome() {
               <p className='font-body-md text-body-md text-on-surface-variant mb-6 flex-grow'>
                 Mejora la comunicación, resuelve conflictos y fortalece el vínculo afectivo con herramientas prácticas.
               </p>
-              <a className='text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto' href='#'>
+              <Link to='/services' className='text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto'>
                 Saber más{' '}
                 <span className='material-symbols-outlined ml-1 text-sm' data-icon='arrow_forward'>
                   arrow_forward
                 </span>
-              </a>
+              </Link>
             </div>
             <div className='bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 group flex flex-col h-full'>
               <div className='w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors'>
@@ -55,7 +57,9 @@ export default function ServiceHome() {
                 Evaluación médica integral y manejo farmacológico para trastornos del estado de ánimo, ansiedad y más.
               </p>
               <button className='w-full bg-surface-variant text-on-surface hover:bg-outline-variant py-2 rounded-lg font-body-md font-medium transition-colors mt-auto'>
-                Agendar Consulta
+                <Link to='https://wa.me/593998964126' target='_blank'>
+                  Agendar Consulta
+                </Link>
               </button>
             </div>
             <div className='bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 md:col-span-2 group flex flex-col md:flex-row items-center gap-6 h-full'>
@@ -77,12 +81,12 @@ export default function ServiceHome() {
                 <p className='font-body-md text-body-md text-on-surface-variant mb-6 flex-grow'>
                   Evaluación detallada de las funciones cognitivas (memoria, atención, lenguaje) para diagnóstico y rehabilitación neuropsicológica.
                 </p>
-                <a className='text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto' href='#'>
+                <Link to='/services' className='text-primary-container font-body-md font-medium flex items-center hover:text-primary mt-auto'>
                   Saber más{' '}
                   <span className='material-symbols-outlined ml-1 text-sm' data-icon='arrow_forward'>
                     arrow_forward
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -99,9 +103,9 @@ export default function ServiceHome() {
                 <p className='font-body-md text-sm text-on-surface-variant mb-4'>
                   Acompañamiento especializado en los desafíos emocionales de la juventud.
                 </p>
-                <a className='text-primary-container text-sm font-medium hover:text-primary' href='#'>
+                <Link to='/services' className='text-primary-container text-sm font-medium hover:text-primary' href='#'>
                   Saber más
-                </a>
+                </Link>
               </div>
 
               <div className='bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 flex-1'>
@@ -116,9 +120,9 @@ export default function ServiceHome() {
                 <p className='font-body-md text-sm text-on-surface-variant mb-4'>
                   Sesiones grupales de psicoeducación para el manejo del estrés y la ansiedad.
                 </p>
-                <a className='text-primary-container text-sm font-medium hover:text-primary' href='#'>
+                <Link to='/contact' className='text-primary-container text-sm font-medium hover:text-primary' href='#'>
                   Ver calendario
-                </a>
+                </Link>
               </div>
             </div>
           </div>

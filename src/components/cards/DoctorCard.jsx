@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function DoctorCard({ doctor, index }) {
+export default function DoctorCard({ profesionales, index }) {
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -11,15 +11,15 @@ export default function DoctorCard({ doctor, index }) {
       onMouseLeave={() => setIsHover(false)}
       onClick={() => setIsHover(!isHover)}
     >
-      <img src={doctor.srcImg} alt={doctor.alt} className='absolute inset-0 w-full h-full object-cover' />
+      <img src={profesionales.img_url} alt={profesionales.doctor_name} className='absolute inset-0 w-full h-full object-cover' />
 
       <div className='absolute inset-0 bg-gradient-to-t from-primary-container/90 via-transparent to-transparent' />
 
       {!isHover && (
         <div className='absolute bottom-0 left-0 p-6 z-10'>
-          <h3 className='text-2xl font-bold text-white'>{doctor.nombre}</h3>
+          <h3 className='text-2xl font-bold text-white'>{profesionales.doctor_name}</h3>
 
-          <p className='font-label-caps label-caps text-secondary-container mt-xs'>{doctor.especialidad}</p>
+          <p className='font-label-caps label-caps text-secondary-container mt-xs'>{profesionales.speciality}</p>
         </div>
       )}
 
@@ -33,9 +33,9 @@ export default function DoctorCard({ doctor, index }) {
           ${isHover ? 'opacity-100' : 'opacity-0'}
         `}
       >
-        <h3 className='text-3xl font-bold text-white mb-4'>{doctor.nombre}</h3>
+        <h3 className='text-3xl font-bold text-white mb-4'>{profesionales.doctor_name}</h3>
 
-        <p className='text-purple-100 leading-relaxed'>{doctor.especialidadAmpliada}</p>
+        <p className='text-purple-100 leading-relaxed'>{profesionales.description}</p>
       </div>
     </div>
   );
