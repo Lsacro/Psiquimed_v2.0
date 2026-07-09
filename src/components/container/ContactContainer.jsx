@@ -12,9 +12,9 @@ export default function ContactContainer() {
                   <div>
                     <p className='font-label-caps label-caps text-secondary mb-xs uppercase'>Dirección</p>
                     <p className='font-body-md text-body-md text-on-surface'>
-                      Av. de la Paz 1234, Col. Centro
+                      Calle Jorge Juan N33-68 y Av. Atahualpa
                       <br />
-                      Ciudad Médica, CP 45000
+                      170147 Quito, Ecuador
                     </p>
                   </div>
                 </div>
@@ -22,14 +22,14 @@ export default function ContactContainer() {
                   <span className='material-symbols-outlined text-secondary text-[24px]'>call</span>
                   <div>
                     <p className='font-label-caps label-caps text-secondary mb-xs uppercase'>Teléfono</p>
-                    <p className='font-body-md text-body-md text-on-surface'>+52 (55) 1234-5678</p>
+                    <p className='font-body-md text-body-md text-on-surface'>+593 998964126</p>
                   </div>
                 </div>
                 <div className='flex items-start gap-md'>
                   <span className='material-symbols-outlined text-secondary text-[24px]'>mail</span>
                   <div>
                     <p className='font-label-caps label-caps text-secondary mb-xs uppercase'>Correo Electrónico</p>
-                    <p className='font-body-md text-body-md text-on-surface'>hola@psiquimed.com</p>
+                    <p className='font-body-md text-body-md text-on-surface'>psiquimed20@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -39,12 +39,28 @@ export default function ContactContainer() {
               <h2 className='font-headline-md text-headline-md text-primary mb-md'>Horarios de Atención</h2>
               <ul className='space-y-sm font-body-md text-body-md text-on-surface-variant'>
                 <li className='flex justify-between border-b border-surface-variant pb-xs'>
-                  <span>Lunes - Viernes</span>
+                  <span>Lunes</span>
                   <span className='font-semibold'>09:00 - 20:00</span>
                 </li>
                 <li className='flex justify-between border-b border-surface-variant pb-xs'>
+                  <span>Martes</span>
+                  <span className='font-semibold'>09:00 - 20:00</span>
+                </li>
+                <li className='flex justify-between border-b border-surface-variant pb-xs'>
+                  <span>Miércoles</span>
+                  <span className='font-semibold'>09:00 - 17:00</span>
+                </li>
+                <li className='flex justify-between border-b border-surface-variant pb-xs'>
+                  <span>Jueves</span>
+                  <span className='font-semibold'>09:00 - 20:00</span>
+                </li>
+                <li className='flex justify-between border-b border-surface-variant pb-xs'>
+                  <span>Viernes</span>
+                  <span className='font-semibold'>09:00 - 19:00</span>
+                </li>
+                <li className='flex justify-between border-b border-surface-variant pb-xs'>
                   <span>Sábados</span>
-                  <span className='font-semibold'>10:00 - 14:00</span>
+                  <span className='font-semibold'>10:00 - 13:00</span>
                 </li>
                 <li className='flex justify-between text-outline'>
                   <span>Domingos</span>
