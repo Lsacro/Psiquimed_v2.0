@@ -11,7 +11,7 @@ export default function ServiceHome() {
               Enfoques terapéuticos diseñados a la medida de tus necesidades, guiados por especialistas en salud mental.
             </p>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-md'>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-md'>
             <div className='bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 group flex flex-col h-full'>
               <div className='w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary-container group-hover:text-on-primary transition-colors'>
                 <span className='material-symbols-outlined' data-icon='person'>
@@ -29,6 +29,7 @@ export default function ServiceHome() {
                 </span>
               </Link>
             </div>
+
             <div className='bg-surface-container-lowest rounded-xl p-md border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 group flex flex-col h-full'>
               <div className='w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-on-secondary transition-colors'>
                 <span className='material-symbols-outlined' data-icon='favorite'>
@@ -90,6 +91,41 @@ export default function ServiceHome() {
               </div>
             </div>
 
+            <div className='flex flex-col gap-md h-full'>
+              <div className='bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 flex-1'>
+                <div className='flex items-center gap-4 mb-3'>
+                  <div className='w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary'>
+                    <span className='material-symbols-outlined' data-icon='family_restroom'>
+                      family_restroom
+                    </span>
+                  </div>
+                  <h3 className='font-headline-md text-[20px] font-semibold text-on-surface'>Adolescentes</h3>
+                </div>
+                <p className='font-body-md text-sm text-on-surface-variant mb-4'>
+                  Acompañamiento especializado en los desafíos emocionales de la juventud.
+                </p>
+                <Link to='/services' className='text-primary-container text-sm font-medium hover:text-primary' href='#'>
+                  Saber más
+                </Link>
+              </div>
+
+              <div className='bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 flex-1'>
+                <div className='flex items-center gap-4 mb-3'>
+                  <div className='w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary-container'>
+                    <span className='material-symbols-outlined' data-icon='groups'>
+                      groups
+                    </span>
+                  </div>
+                  <h3 className='font-headline-md text-[20px] font-semibold text-on-surface'>Talleres</h3>
+                </div>
+                <p className='font-body-md text-sm text-on-surface-variant mb-4'>
+                  Sesiones grupales de psicoeducación para el manejo del estrés y la ansiedad.
+                </p>
+                <Link to='/contact' className='text-primary-container text-sm font-medium hover:text-primary' href='#'>
+                  Ver calendario
+                </Link>
+              </div>
+            </div>
             <div className='flex flex-col gap-md h-full'>
               <div className='bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_2px_10px_rgba(57,20,148,0.05)] hover:shadow-[0_10px_30px_rgba(57,20,148,0.08)] transition-all duration-300 flex-1'>
                 <div className='flex items-center gap-4 mb-3'>

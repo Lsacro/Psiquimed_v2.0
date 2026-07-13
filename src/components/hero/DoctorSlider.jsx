@@ -4,16 +4,26 @@ import { useEffect } from 'react';
 import { supabase } from '../../../utils/supabase.js';
 
 export default function DoctorSlider() {
+  function shuffle(array) {
+    const arr = [...array];
+
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+    return arr;
+  }
   const [profesionales, setProfesionales] = useState([]);
   useEffect(() => {
     async function fetchProfesionales() {
-      const { data, error } = await supabase.from('professionals').select('*');
+      const { data, error } = await supabase.from('professionals').select('doctor_name, speciality, description, img_url');
       if (error) {
         console.error(error);
         return;
       }
 
-      setProfesionales(data);
+      setProfesionales(shuffle(data));
     }
 
     fetchProfesionales();
