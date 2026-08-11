@@ -18,8 +18,7 @@ const articleData = [
         name: 'Dra. Elena Ramos',
         role: 'Psiquiatra Especialista en Trastornos del Sueño',
 
-        avatar:
-          'https://lh3.googleusercontent.com/aida-public/AB6AXuCK7vh0w3Cofxe0pn1aVaieJ8_0EvRpISPtlVFFlJLYOdyQmqJ7SaaFZoB5c8oj_H1lYQT0XLeVAKgI-wxa-iYShzyk-9B72jgEO68tCOZtS9LYxAXbH28byGQCmIniRL4q4-voIS44OWhgg2Q91iu0etKx7xDmFRWR3XMrCZEV6s3TV0T01AcWCRN0ZwT4Vkwf7zvi4uSvJutI-2rzXtgCEm3x3CFZ__br248DQiFIBjNr0dFmP_z9TMU7yTHtL9wYymlLYm1qkHQ',
+        avatar: ' ',
       },
     },
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import EducationCardRigth from '../cards/EducationCardRigth';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { supabase } from '../../../utils/supabase';
+import { supabase } from '../../../utils/supabase.js';
 
 export default function EducationHome() {
   const [articles, setArticles] = useState([]);
@@ -19,7 +19,7 @@ export default function EducationHome() {
 
     fetchArticles();
   }, []);
-  console.log(articles);
+
   return (
     <>
       <section className='py-xl bg-surface px-8'>

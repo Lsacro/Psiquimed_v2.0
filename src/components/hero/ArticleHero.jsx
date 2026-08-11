@@ -1,8 +1,8 @@
-export default function ArticleHero({ image, imageAlt, category, readingTime, title, author, role, avatar }) {
+export default function ArticleHero({ image, category, readingTime, title, author, avatar }) {
   return (
     <>
       <header className='relative w-full h-[614px] min-h-[400px] flex items-end pb-xl pt-32 overflow-hidden'>
-        <img className='absolute inset-0 w-full h-full object-cover' data-alt={imageAlt} src={image} />
+        <img className='absolute inset-0 w-full h-full object-cover' src={image} />
         <div className='absolute inset-0 bg-gradient-to-t from-primary-container/80 via-primary-container/40 to-transparent'></div>
         <div className='max-w-[1200px] mx-auto px-6 w-full relative z-10'>
           <div className='max-w-3xl backdrop-blur-md bg-white/10 p-lg rounded-xl border border-white/20 shadow-[0_30px_30px_rgba(57,20,148,0.12)]'>
@@ -14,7 +14,7 @@ export default function ArticleHero({ image, imageAlt, category, readingTime, ti
                 <span className='material-symbols-outlined text-[16px]' data-icon='schedule' data-weight='fill'>
                   schedule
                 </span>
-                {readingTime}
+                {readingTime} MIN DE LECTURA
               </span>
             </div>
             <h1 className='font-headline-xl text-headline-xl text-white mb-6'>{title}</h1>
@@ -26,7 +26,6 @@ export default function ArticleHero({ image, imageAlt, category, readingTime, ti
               />
               <div>
                 <p className='font-body-md text-body-md text-white font-semibold'>{author}</p>
-                <p className='font-label-caps label-caps text-inverse-primary'>{role}</p>
               </div>
             </div>
           </div>

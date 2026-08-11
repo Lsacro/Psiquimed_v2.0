@@ -12,7 +12,10 @@ export default function BenefitsContainer() {
                 </span>
               </div>
               <h3 className='font-headline-md text-[20px] text-on-surface mb-3'>Atención Personalizada</h3>
-              <p className='font-body-md text-on-surface-variant text-center '>Cada tratamiento se adapta a tu historia y necesidades específicas.</p>
+              <p className='font-body-md text-on-surface-variant text-center '>
+                Nuestras citas medicas duran 60 minutos un tiempo destinado para hacer una historia clinica completa indispensable para un diagnostico
+                y tratamiento adecuados
+              </p>
             </div>
             <div className='flex flex-col items-center'>
               <div className='w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container mb-6'>
@@ -22,7 +25,7 @@ export default function BenefitsContainer() {
               </div>
               <h3 className='font-headline-md text-[20px] text-on-surface mb-3'>Confidencialidad Absoluta</h3>
               <p className='font-body-md text-on-surface-variant text-center '>
-                Tu privacidad y la seguridad de tu información son nuestra prioridad.
+                Tu privacidad y la seguridad de tu información son nuestra prioridad
               </p>
             </div>
             <div className='flex flex-col items-center'>
@@ -32,7 +35,10 @@ export default function BenefitsContainer() {
                 </span>
               </div>
               <h3 className='font-headline-md text-[20px] text-on-surface mb-3'>Expertos Certificados</h3>
-              <p className='font-body-md text-on-surface-variant text-center '>Equipo médico de alto nivel con formación continua en salud mental.</p>
+              <p className='font-body-md text-on-surface-variant text-center '>
+                {' '}
+                Nuestros psiquiatras tienen formación en psicoterapia, es decir, no solo recibiras medicación, también te sentirás escuchado
+              </p>
             </div>
           </div>
         </div>

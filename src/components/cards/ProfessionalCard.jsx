@@ -61,18 +61,21 @@ export default function ProfessionalCard({ doctor_name, title, specialty, treatm
                 {treatment_3}
               </span>
             </div>
+            <div className='flex justify-center '>
+              <NavLink
+                className='w-[77%] bg-[#0077b5] text-white rounded-full text-lg font-semibold hover:scale-110 transition-transform flex items-center justify-center gap-2'
+                to={linkedin}
+                target='_blank'
+                rel='noopener noreferrer'
+                onClick={(e) => e.stopPropagation()}
+              >
+                <svg className='w-12 h-12'>
+                  <use href='/sprite.svg#linkedin' />
+                </svg>
 
-            <NavLink
-              className='text-[#391494] hover:scale-110 transition-transform flex items-center justify-center'
-              to={linkedin}
-              target='_blank'
-              rel='noopener noreferrer'
-              onClick={(e) => e.stopPropagation()}
-            >
-              <svg className='w-10 h-10'>
-                <use href='/sprite.svg#linkedin' />
-              </svg>
-            </NavLink>
+                <p className='uppercase'>LinkedIn</p>
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

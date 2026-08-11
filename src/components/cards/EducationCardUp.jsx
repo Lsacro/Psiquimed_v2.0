@@ -18,7 +18,7 @@ export default function EducationCardUp({ id, src, lectureTime, title, body, slu
         <div className='p-md flex-grow flex flex-col'>
           <div className='flex items-center gap-xs mb-sm text-secondary'>
             <span className='material-symbols-outlined !text-[18px]'>schedule</span>
-            <span className='font-label-caps label-caps'>{lectureTime}</span>
+            <span className='font-label-caps label-caps'>{lectureTime} min lectura</span>
           </div>
           <h3 className='font-headline-md text-headline-md text-on-surface mb-sm'>{title}</h3>
           <p className='font-body-md text-body-md text-on-surface-variant mb-md flex-grow'>{body}</p>

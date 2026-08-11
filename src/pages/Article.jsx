@@ -1,30 +1,77 @@
 import { useParams } from 'react-router-dom';
-import articleData from '../db/articles.js';
 import ArticleHero from '../components/hero/ArticleHero';
 import ArticleContainer from '../components/container/ArticleContainer.jsx';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { supabase } from '../../utils/supabase.js';
 
 export default function Article() {
   const { slug } = useParams();
 
-  const article = articleData.find((a) => a.slug === slug);
+  const [articles, setArticles] = useState([]);
+  useEffect(() => {
+    async function fetchArticles() {
+      const { data, error } = await supabase.from('articles').select('*');
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      setArticles(data);
+    }
+
+    fetchArticles();
+  }, []);
+
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    async function fetchList() {
+      const { data, error } = await supabase.from('list_items').select('*');
+      if (error) {
+        console.error(error);
+        return;
+      }
+      setList(data);
+    }
+
+    fetchList();
+  }, []);
+
+  const [cta, setCta] = useState([]);
+  useEffect(() => {
+    async function fetchCta() {
+      const { data, error } = await supabase.from('article_ctas').select('*');
+      if (error) {
+        console.error(error);
+        return;
+      }
+      setCta(data);
+    }
+
+    fetchCta();
+  }, []);
+
+  const article = articles.find((a) => a.slug === slug);
 
   if (!article) {
     return <h1>Articulo no encontrado</h1>;
   }
+  const card = cta.find((a) => a.id === article.id);
+
+  const lists = list.filter((item) => item.article_id === article.id);
 
   return (
     <>
       <ArticleHero
-        image={article.hero.image}
-        imageAlt={article.hero.imageAlt}
-        category={article.hero.category}
-        readingTime={article.hero.readingTime}
-        title={article.hero.title}
-        author={article.hero.author.name}
-        role={article.hero.author.role}
-        avatar={article.hero.author.avatar}
+        id={article.id}
+        category={article.category}
+        readingTime={article.lecture_time}
+        title={article.title}
+        author={article.author_name}
+        avatar={article.avatar}
+        image={article.img}
       />
-      <ArticleContainer intro={article.introduction} body={article.body} tips={article.tips} cta={article.cta} />
+      <ArticleContainer intro={article} list={lists} card={card} />
     </>
   );
 }

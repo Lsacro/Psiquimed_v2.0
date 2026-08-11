@@ -3,18 +3,32 @@ import { useState } from 'react';
 
 const slides = [
   {
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA5J2BJMRIsDmu6k_Hzgr8551zKl2V90j4G1rKpQeiMhs6uY2JWLUgya1fIw00bPOw_wPxjqTzoJq2Qvqc_CBtZdoW1wmH4gKTOMpj1T8l6iXOPWYiVarJMh7D66299xtwpU-s-AIZRP9qZ2ajcW9fsGk2n-Ze1s0f9g1aMARgGIj-h536qU_0WRYO_V_EELi_hyrFQfQUvrciCkkrd6HlIEa_8gXt6O8l_wZU6MViFeaIJLGqdn3OlQKQctwc1cMdbGMiIQup5hUY',
+    image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_consult_1_11zon.jpg',
     title: 'Tu bienestar es nuestra prioridad',
     text: 'Experiencing guided calm through professional psychiatric care and empathetic support tailored to your mental wellness journey.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1920&q=80',
+    image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_consult_2_2_11zon.jpg',
     title: 'Encuentra tu paz interior',
     text: 'Entornos serenos y profesionales capacitados para guiarte hacia una mejor salud mental y equilibrio emocional.',
   },
   {
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=80',
+    image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_front_3_11zon.jpg',
+    title: 'Apoyo profesional compasivo',
+    text: 'Terapias basadas en evidencia diseñadas específicamente para tus necesidades individuales en un espacio seguro.',
+  },
+  {
+    image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_inter_4_11zon.jpg',
+    title: 'Tu bienestar es nuestra prioridad',
+    text: 'Experiencing guided calm through professional psychiatric care and empathetic support tailored to your mental wellness journey.',
+  },
+  {
+    image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_recep_5_11zon.jpg',
+    title: 'Encuentra tu paz interior',
+    text: 'Entornos serenos y profesionales capacitados para guiarte hacia una mejor salud mental y equilibrio emocional.',
+  },
+  {
+    image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_stairs_6_11zon.jpg',
     title: 'Apoyo profesional compasivo',
     text: 'Terapias basadas en evidencia diseñadas específicamente para tus necesidades individuales en un espacio seguro.',
   },
