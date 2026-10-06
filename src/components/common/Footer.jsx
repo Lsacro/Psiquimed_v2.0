@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import logo from '../../../public/logo.png';
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <footer className='bg-slate-50  w-full py-12 border-t border-slate-200  text-[#391494]  font-manrope text-sm leading-relaxed'>
         <div className='max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-8'>
           <div className='flex flex-col gap-sm'>
-            <div className='text-xl font-black text-[#391494]  mb-xs'>Psiquimed</div>
+            <img className='w-48' src={logo} alt='logo' />
             <p className='text-slate-500 '>© 2026 Psiquimed.&nbsp;Calma guiada para el bienestar mental</p>
             <div className='flex gap-6 mt-4'>
               <NavLink
@@ -43,18 +44,36 @@ export default function Footer() {
           </div>
           <div className='flex flex-col gap-sm'>
             <h4 className='font-headline-md text-headline-md text-[#391494] '>Enlaces</h4>
-            <a className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200' href='#'>
+            <NavLink
+              className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200'
+              to='/contact'
+            >
               Horarios de atención
-            </a>
-            <a className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200' href='#'>
+            </NavLink>
+            <NavLink
+              className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200'
+              to='https://www.google.com/maps/place/PSIQUIMED/@-0.1854742,-78.4952607,829m/data=!3m2!1e3!4b1!4m6!3m5!1s0x91d5a39e43cd75fd:0x8c4140fcdf6a0ce1!8m2!3d-0.1854796!4d-78.4926858!16s%2Fg%2F11s8h_mnbw?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               Google Maps
-            </a>
-            <a className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200' href='#'>
-              WhatsApp&nbsp;
-            </a>
-            <a className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200' href='#'>
+            </NavLink>
+            <NavLink
+              className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200'
+              to='https://wa.me/593998964126'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Whatsapp
+            </NavLink>
+            <NavLink
+              className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200'
+              to=''
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               Políticas de privacidad
-            </a>
+            </NavLink>
           </div>
           <div className='flex flex-col gap-sm col-span-1 md:col-span-2'>
             <h4 className='font-headline-md text-headline-md text-[#391494] '>Ubicación</h4>

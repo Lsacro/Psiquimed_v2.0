@@ -63,7 +63,7 @@ export default function ProfessionalCard({ doctor_name, title, specialty, treatm
             </div>
             <div className='flex justify-center '>
               <NavLink
-                className='w-[77%] bg-[#0077b5] text-white rounded-full text-lg font-semibold hover:scale-110 transition-transform flex items-center justify-center gap-2'
+                className='w-full bg-[#0077b5] text-white font-label-caps text-label-caps uppercase  rounded-lg hover:bg-[#005e8e] transition-colors flex items-center justify-center gap-2'
                 to={linkedin}
                 target='_blank'
                 rel='noopener noreferrer'

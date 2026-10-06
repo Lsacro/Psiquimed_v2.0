@@ -5,32 +5,32 @@ const slides = [
   {
     image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_consult_1_11zon.jpg',
     title: 'Tu bienestar es nuestra prioridad',
-    text: 'Experiencing guided calm through professional psychiatric care and empathetic support tailored to your mental wellness journey.',
+    text: 'Experimente una guía cercana y serena, respaldada por atención psiquiátrica profesional y un acompañamiento empático, adaptado a su proceso de bienestar mental',
   },
   {
     image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_consult_2_2_11zon.jpg',
-    title: 'Encuentra tu paz interior',
-    text: 'Entornos serenos y profesionales capacitados para guiarte hacia una mejor salud mental y equilibrio emocional.',
+    title: 'Un entorno pensado para tu atención',
+    text: 'Espacios cómodos y privados, diseñados para brindar una atención profesional en salud mental con confidencialidad, respeto y tranquilidad',
   },
   {
     image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_front_3_11zon.jpg',
-    title: 'Apoyo profesional compasivo',
-    text: 'Terapias basadas en evidencia diseñadas específicamente para tus necesidades individuales en un espacio seguro.',
+    title: 'Atención profesional centrada en ti',
+    text: 'Evaluación y tratamiento en salud mental con un enfoque multidisciplinario, basado en evidencia científica',
   },
   {
     image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_inter_4_11zon.jpg',
     title: 'Tu bienestar es nuestra prioridad',
-    text: 'Experiencing guided calm through professional psychiatric care and empathetic support tailored to your mental wellness journey.',
+    text: 'Experimente una guía cercana y serena, respaldada por atención psiquiátrica profesional y un acompañamiento empático, adaptado a su proceso de bienestar mental',
   },
   {
     image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_recep_5_11zon.jpg',
-    title: 'Encuentra tu paz interior',
-    text: 'Entornos serenos y profesionales capacitados para guiarte hacia una mejor salud mental y equilibrio emocional.',
+    title: 'Un entorno pensado para tu atención',
+    text: 'Espacios cómodos y privados, diseñados para brindar una atención profesional en salud mental con confidencialidad, respeto y tranquilidad',
   },
   {
     image: 'https://hoghcgkenvzxcmiuqaou.supabase.co/storage/v1/object/public/psiquimed_images/slider_home/Casa_stairs_6_11zon.jpg',
-    title: 'Apoyo profesional compasivo',
-    text: 'Terapias basadas en evidencia diseñadas específicamente para tus necesidades individuales en un espacio seguro.',
+    title: 'Atención profesional centrada en ti',
+    text: 'Evaluación y tratamiento en salud mental con un enfoque multidisciplinario, basado en evidencia científica',
   },
 ];
 

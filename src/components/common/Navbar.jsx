@@ -1,11 +1,14 @@
 import { NavLink } from 'react-router-dom';
+import logo from '../../../public/logo.png';
 
 function Navbar() {
   return (
     <>
       <nav className='bg-white/95 95 backdrop-blur-md w-full top-0 z-50 sticky border-b border-slate-100  shadow-[0_2px_15px_-3px_rgba(57,20,148,0.07)] font-manrope antialiased text-primary-container hidden md:block'>
         <div className='flex justify-between items-center h-20 px-8 max-w-300 mx-auto'>
-          <div className='text-2xl font-bold tracking-tight text-primary-container '>Psiquimed</div>
+          <div className='text-2xl font-bold tracking-tight text-primary-container '>
+            <img className='h-16' src={logo} alt='logo' />
+          </div>
           <div className='hidden md:flex items-center gap-sm'>
             <NavLink
               to='/'

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../../../public/logo.png';
 
 export default function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,9 @@ export default function MobileNavbar() {
         <button onClick={() => setIsOpen(true)}>
           <span className='material-symbols-outlined text-[28px]'>menu</span>
         </button>
-        <div className='text-2xl font-bold tracking-tight text-primary-container '>Psiquimed</div>
+        <div className='text-2xl font-bold tracking-tight text-primary-container '>
+          <img className='h-10' src={logo} alt='logo' />
+        </div>
         <NavLink
           to='https://wa.me/593998964126'
           target='_blank'
@@ -48,7 +51,9 @@ export default function MobileNavbar() {
       >
         {/* HEADER DRAWER */}
         <div className='flex items-center justify-between border-b px-6 py-6'>
-          <h2 className='text-3xl font-bold text-[#391494]'>Psiquimed</h2>
+          <h2 className='text-3xl font-bold text-[#391494]'>
+            <img className='h-12' src={logo} alt='logo' />
+          </h2>
 
           <button onClick={closeMenu}>
             <span className='material-symbols-outlined text-[28px]'>close</span>

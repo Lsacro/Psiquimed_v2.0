@@ -1,62 +1,65 @@
 import { useParams } from 'react-router-dom';
 import ArticleHero from '../components/hero/ArticleHero';
 import ArticleContainer from '../components/container/ArticleContainer.jsx';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '../../utils/supabase.js';
 
 export default function Article() {
   const { slug } = useParams();
 
   const [articles, setArticles] = useState([]);
-  useEffect(() => {
-    async function fetchArticles() {
-      const { data, error } = await supabase.from('articles').select('*');
-      if (error) {
-        console.error(error);
-        return;
-      }
-
-      setArticles(data);
-    }
-
-    fetchArticles();
-  }, []);
-
   const [list, setList] = useState([]);
-  useEffect(() => {
-    async function fetchList() {
-      const { data, error } = await supabase.from('list_items').select('*');
-      if (error) {
-        console.error(error);
-        return;
-      }
-      setList(data);
-    }
-
-    fetchList();
-  }, []);
-
   const [cta, setCta] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    async function fetchCta() {
-      const { data, error } = await supabase.from('article_ctas').select('*');
-      if (error) {
-        console.error(error);
-        return;
+    async function fetchData() {
+      setLoading(true);
+
+      const [{ data: articlesData, error: articlesError }, { data: listData, error: listError }, { data: ctaData, error: ctaError }] =
+        await Promise.all([
+          supabase.from('articles').select('*'),
+          supabase.from('list_items').select('*'),
+          supabase.from('article_ctas').select('*'),
+        ]);
+
+      if (articlesError) {
+        console.error('Error articles:', articlesError);
       }
-      setCta(data);
+
+      if (listError) {
+        console.error('Error list_items:', listError);
+      }
+
+      if (ctaError) {
+        console.error('Error article_ctas:', ctaError);
+      }
+
+      setArticles(articlesData || []);
+      setList(listData || []);
+      setCta(ctaData || []);
+
+      setLoading(false);
     }
 
-    fetchCta();
+    fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <div className='flex justify-center h-screen items-center m-0 bg-blue-950'>
+        <h1 className='text-3xl font-bold text-white'>Cargando artículo...</h1>
+      </div>
+    );
+  }
 
   const article = articles.find((a) => a.slug === slug);
 
   if (!article) {
-    return <h1>Articulo no encontrado</h1>;
+    return <h1>Artículo no encontrado</h1>;
   }
-  const card = cta.find((a) => a.id === article.id);
+
+  const card = cta.find((a) => a.article_id === article.id);
 
   const lists = list.filter((item) => item.article_id === article.id);
 
@@ -71,6 +74,7 @@ export default function Article() {
         avatar={article.avatar}
         image={article.img}
       />
+
       <ArticleContainer intro={article} list={lists} card={card} />
     </>
   );
