@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../../../public/logo.png';
+import logo from '/logo.png';
 
 export default function Footer() {
   return (
@@ -68,7 +68,7 @@ export default function Footer() {
             </NavLink>
             <NavLink
               className='text-slate-500  hover:text-[#D2A0DF]  transition-colors outline-none focus:ring-2 focus:ring-purple-200'
-              to=''
+              to='/privacy'
               target='_blank'
               rel='noopener noreferrer'
             >

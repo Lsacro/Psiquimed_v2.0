@@ -31,7 +31,7 @@ export default function ServicesContainer() {
 
   return (
     <section id='catalogo-servicios' className='py-xl bg-surface-container-low px-8'>
-      <div className='max-w-[1200px] mx-auto'>
+      <div className='max-w-container-max mx-auto'>
         {/* =========================
             ENCABEZADO
         ========================== */}
@@ -51,7 +51,7 @@ export default function ServicesContainer() {
         {loading && (
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className='h-[450px] rounded-2xl bg-surface-container animate-pulse' />
+              <div key={item} className='h-112.5 rounded-2xl bg-surface-container animate-pulse' />
             ))}
           </div>
         )}

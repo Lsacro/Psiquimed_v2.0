@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../../public/logo.png';
+import logo from '/logo.png';
 
 export default function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
