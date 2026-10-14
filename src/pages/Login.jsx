@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import LoginForm from '../components/container/LoginForm';
+import { useState } from 'react';
 
 export default function Login() {
+  const [error, setError] = useState(false);
   return (
     <>
       <div className='min-h-screen bg-slate-50 text-slate-800 antialiased overflow-y-auto w-full flex flex-col font-sans selection:bg-purple-100 selection:text-primary-container'>
@@ -50,7 +52,24 @@ export default function Login() {
                 </span>
                 <span id='alertMessage'></span>
               </div>
-              <LoginForm />
+              {error && (
+                <div
+                  class='mb-6 p-4 rounded-xl text-xs flex items-start gap-3 bg-red-50 border border-red-200 text-red-900 shadow-sm transition-all'
+                  id='loginAlert'
+                  role='alert'
+                >
+                  <span class='material-symbols-outlined text-[20px] text-red-600 shrink-0 mt-0.5' id='alertIcon'>
+                    error
+                  </span>
+                  <div class='space-y-1 flex-1'>
+                    <p class='font-bold text-red-800 text-sm'>Error de autenticación</p>
+                    <p class='text-red-700 leading-relaxed' id='alertMessage'>
+                      Las credenciales ingresadas no coinciden con nuestros registros o la cuenta no tiene permisos activos.
+                    </p>
+                  </div>
+                </div>
+              )}
+              <LoginForm error={error} onChangeError={(e) => setError(e)} />
               <div className='mt-8 pt-6 border-t border-slate-100'>
                 <div className='flex items-start gap-3 bg-slate-50 p-3.5 rounded-xl border border-slate-200'>
                   <span className='material-symbols-outlined text-primary-container text-lg shrink-0 mt-0.5'>security</span>
